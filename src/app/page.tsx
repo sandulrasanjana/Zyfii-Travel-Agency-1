@@ -160,12 +160,12 @@ export default function Home() {
           />
         </div>
         <div className="relative z-10 px-6 max-w-6xl mx-auto mt-20 md:mt-24">
-          <span className="luxury-text text-accent mb-8 block fade-in-up tracking-[0.3em] font-medium opacity-90">The Essence of Sri Lanka</span>
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif mb-8 leading-[1.1] tracking-tight drop-shadow-2xl fade-in-up delay-100 uppercase">
+          <span className="luxury-text text-accent text-[10px] md:text-sm mb-8 block fade-in-up tracking-[0.2em] md:tracking-[0.3em] font-medium opacity-90">The Essence of Sri Lanka</span>
+          <h1 className="text-3xl sm:text-4xl md:text-7xl lg:text-8xl font-serif mb-8 leading-[1.1] tracking-tight drop-shadow-2xl fade-in-up delay-100 uppercase">
             Travel With <br />
             <span className=" font-light lowercase">Unmatched Elegance</span>
           </h1>
-          <p className="text-base md:text-lg mb-12 font-light tracking-[0.2em] uppercase max-w-2xl mx-auto opacity-80 fade-in-up delay-200 leading-relaxed">
+          <p className="text-[10px] sm:text-xs md:text-base lg:text-lg mb-12 font-light tracking-[0.2em] uppercase max-w-2xl mx-auto opacity-80 fade-in-up delay-200 leading-relaxed">
             Premium Tour Hire & Bespoke Travel Experiences
           </p>
 
@@ -189,14 +189,14 @@ export default function Home() {
       </section>
 
       {/* 2. ABOUT US SECTION */}
-      <section id="about" className="py-32 flex items-center bg-white reveal">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12 w-full">
-          <div className="mb-16 text-center md:text-center">
-            <span className="luxury-text text-gray-400 text-sm block mb-4">Discovery</span>
-            <h2 className="text-3xl md:text-4xl font-serif text-black leading-tight">Our <span className="font-light uppercase text-accent">Philosophy</span></h2>
+      <section id="about" className="py-32 flex items-center bg-white relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12 w-full relative z-10">
+          <div className="mb-16 text-center">
+            <span className="luxury-text text-gray-400 text-sm block mb-4 tracking-[0.3em] reveal">Discovery</span>
+            <h2 className="text-3xl md:text-4xl font-serif text-black leading-tight reveal" style={{ transitionDelay: '200ms' }}>Our <span className="font-light uppercase text-accent">Philosophy</span></h2>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-            <div className="relative aspect-video lg:aspect-[4/3] overflow-hidden rounded-2xl shadow-2xl order-1 lg:order-1">
+            <div className="relative aspect-video lg:aspect-[4/3] overflow-hidden rounded-2xl shadow-2xl order-1 lg:order-1 reveal">
               <Image
                 src="https://images.unsplash.com/photo-1544550581-5f7ceaf2f0cf?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
                 alt="Our Travel Philosophy"
@@ -204,7 +204,7 @@ export default function Home() {
                 className="object-cover"
               />
             </div>
-            <div className="space-y-8 order-2 lg:order-2">
+            <div className="space-y-8 order-2 lg:order-2 reveal">
               <p className="text-gray-600 text-xl leading-relaxed font-light first-letter:text-5xl first-letter:font-serif first-letter:mr-3 first-letter:float-left first-letter:text-black">
                 Journey into the heart of Sri Lanka where luxury meets tradition. We believe that travel is not just about the destination, but the stories whispered by the wind and the warmth of the sun on your path.
               </p>
@@ -215,8 +215,12 @@ export default function Home() {
                   { label: "Exclusivity", detail: "Gaining access to hidden gems and private island vistas." },
                   { label: "Heritage", detail: "Deeply connected to our ancient island tales and culture." },
                   { label: "Comfort", detail: "A modern fleet designed for the most discerning traveler." }
-                ].map((item) => (
-                  <div key={item.label} className="border-l border-accent/30 pl-6 group hover:border-accent transition-colors duration-500">
+                ].map((item, idx) => (
+                  <div
+                    key={item.label}
+                    className="border-l border-accent/30 pl-6 group hover:border-accent transition-colors duration-500 reveal"
+                    style={{ transitionDelay: `${idx * 150 + 300}ms` }}
+                  >
                     <h4 className="font-serif text-black uppercase tracking-widest text-xs mb-2 transition-colors duration-300 group-hover:text-accent">{item.label}</h4>
                     <p className="text-gray-400 text-[10px] leading-relaxed uppercase tracking-tighter opacity-80">{item.detail}</p>
                   </div>
@@ -235,62 +239,68 @@ export default function Home() {
       </section>
 
       {/* 3. PACKAGE CARD LIST (FEATURED TOURS) */}
-      <section id="packages" className="py-24 bg-gray-50 reveal overflow-hidden">
-        <div className="max-w-4xl mx-auto px-6 lg:px-12 w-full mb-20 text-center">
-          <span className="luxury-text text-gray-400 text-sm block mb-4">Curated Experiences</span>
-          <h2 className="text-3xl md:text-4xl font-serif text-black leading-tight">Signature <span className="font-light uppercase text-accent">Routes</span></h2>
-        </div>
-
-        <div className="relative group max-w-6xl mx-auto w-full px-4 lg:px-0">
-          {/* Symmetrical Left & Right Controls */}
-          <button
-            onClick={() => scroll("left")}
-            className="absolute left-0 lg:-left-20 top-[45%] -translate-y-1/2 z-20 bg-white text-black p-5 rounded-full shadow-xl hover:bg-black hover:text-white transition-all duration-500 opacity-0 group-hover:opacity-100 border border-gray-100 flex items-center justify-center hover:scale-110 active:scale-95"
-            aria-label="Previous tours"
-          >
-            <ChevronLeft size={24} />
-          </button>
-
-          <button
-            onClick={() => scroll("right")}
-            className="absolute right-0 lg:-right-20 top-[45%] -translate-y-1/2 z-20 bg-white text-black p-5 rounded-full shadow-xl hover:bg-black hover:text-white transition-all duration-500 opacity-0 group-hover:opacity-100 border border-gray-100 flex items-center justify-center hover:scale-110 active:scale-95"
-            aria-label="Next tours"
-          >
-            <ChevronRight size={24} />
-          </button>
-
-          <div
-            ref={scrollRef}
-            onScroll={handleScroll}
-            className="flex gap-10 pb-20 overflow-x-auto scrollbar-hide snap-x snap-mandatory scroll-smooth items-center px-4 md:px-0"
-          >
-            {featuredTours.map((tour, idx) => (
-              <div key={idx} className="flex-shrink-0 snap-start">
-                <SimpleTourCard {...tour} />
-              </div>
-            ))}
+      <section id="packages" className="py-32 bg-gray-50 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12 w-full relative z-10">
+          <div className="max-w-4xl mx-auto mb-20 text-center">
+            <span className="luxury-text text-gray-400 text-sm block mb-4 tracking-[0.3em] reveal">Curated Experiences</span>
+            <h2 className="text-3xl md:text-4xl font-serif text-black leading-tight reveal" style={{ transitionDelay: '200ms' }}>Signature <span className="font-light uppercase text-accent">Routes</span></h2>
           </div>
 
-          {/* Symmetrical Interactive Shifting Indicators */}
-          <div className="flex justify-center items-center gap-3 mt-4 mb-8">
-            {featuredTours.map((_, i) => (
-              <button
-                key={i}
-                onClick={() => scrollTo(i)}
-                className={`h-1.5 rounded-full transition-all duration-500 hover:bg-accent/40 ${i === activeIndex ? "w-8 bg-accent" : "w-1.5 bg-gray-200"}`}
-                aria-label={`Go to tour ${i + 1}`}
-              />
-            ))}
+          <div className="relative group max-w-6xl mx-auto w-full px-4 lg:px-0">
+            {/* Symmetrical Left & Right Controls */}
+            <button
+              onClick={() => scroll("left")}
+              className="absolute left-0 lg:-left-20 top-[45%] -translate-y-1/2 z-20 bg-white text-black p-5 rounded-full shadow-xl hover:bg-black hover:text-white transition-all duration-500 opacity-0 group-hover:opacity-100 border border-gray-100 flex items-center justify-center hover:scale-110 active:scale-95"
+              aria-label="Previous tours"
+            >
+              <ChevronLeft size={24} />
+            </button>
+
+            <button
+              onClick={() => scroll("right")}
+              className="absolute right-0 lg:-right-20 top-[45%] -translate-y-1/2 z-20 bg-white text-black p-5 rounded-full shadow-xl hover:bg-black hover:text-white transition-all duration-500 opacity-0 group-hover:opacity-100 border border-gray-100 flex items-center justify-center hover:scale-110 active:scale-95"
+              aria-label="Next tours"
+            >
+              <ChevronRight size={24} />
+            </button>
+
+            <div
+              ref={scrollRef}
+              onScroll={handleScroll}
+              className="flex gap-10 pb-20 overflow-x-auto scrollbar-hide snap-x snap-mandatory scroll-smooth items-center px-4 md:px-0"
+            >
+              {featuredTours.map((tour, idx) => (
+                <div
+                  key={idx}
+                  className="flex-shrink-0 snap-start reveal"
+                  style={{ transitionDelay: `${(idx % 4) * 150 + 300}ms` }}
+                >
+                  <SimpleTourCard {...tour} />
+                </div>
+              ))}
+            </div>
+
+            {/* Symmetrical Interactive Shifting Indicators */}
+            <div className="flex justify-center items-center gap-3 mt-4 mb-8">
+              {featuredTours.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => scrollTo(i)}
+                  className={`h-1.5 rounded-full transition-all duration-500 hover:bg-accent/40 ${i === activeIndex ? "w-8 bg-accent" : "w-1.5 bg-gray-200"}`}
+                  aria-label={`Go to tour ${i + 1}`}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
       {/* 4. WHY CHOOSE OUR COMPANY */}
-      <section id="why-us" className="py-32 flex items-center bg-white reveal">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12 text-center w-full">
+      <section id="why-us" className="py-32 flex items-center bg-white relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12 text-center w-full relative z-10">
           <div className="mb-24">
-            <span className="luxury-text text-gray-400 text-sm block mb-4">Our Commitment</span>
-            <h2 className="text-3xl md:text-4xl font-serif text-black leading-tight">Defining <span className="font-light uppercase text-accent">Excellence</span></h2>
+            <span className="luxury-text text-gray-400 text-sm block mb-4 tracking-[0.3em] reveal">Our Commitment</span>
+            <h2 className="text-3xl md:text-4xl font-serif text-black leading-tight reveal" style={{ transitionDelay: '200ms' }}>Defining <span className="font-light uppercase text-accent">Excellence</span></h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-16 lg:gap-24">
@@ -299,7 +309,7 @@ export default function Home() {
               { icon: Shield, title: "Curated Safety", desc: "Our fleet represents the pinnacle of reliability, meticulously maintained for your comfort." },
               { icon: Clock, title: "Eternal Support", desc: "Around-the-clock concierage service for a seamless island odyssey." },
             ].map((feature, idx) => (
-              <div key={idx} className="group cursor-default">
+              <div key={idx} className="group cursor-default reveal" style={{ transitionDelay: `${idx * 200 + 400}ms` }}>
                 <div className="bg-gray-50 w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-8 transition-all duration-500 group-hover:bg-accent/10 border border-gray-100 group-hover:border-accent/20">
                   <feature.icon size={32} className="text-black transition-colors duration-300 group-hover:text-accent" />
                 </div>
@@ -312,13 +322,13 @@ export default function Home() {
       </section>
 
       {/* 5. OUR MEMORIES (GALLERY) */}
-      <section id="memories" className="py-32 bg-gray-50 overflow-hidden reveal">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12 text-center mb-20">
-          <span className="luxury-text text-gray-400 text-sm block mb-4">Visual Tales</span>
-          <h2 className="text-3xl md:text-4xl font-serif text-black leading-tight">Eternal <span className="font-light uppercase text-accent">Memories</span></h2>
+      <section id="memories" className="py-32 bg-gray-50 overflow-hidden relative">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12 text-center mb-20 relative z-10">
+          <span className="luxury-text text-gray-400 text-sm block mb-4 tracking-[0.3em] reveal">Visual Tales</span>
+          <h2 className="text-3xl md:text-4xl font-serif text-black leading-tight reveal" style={{ transitionDelay: '200ms' }}>Eternal <span className="font-light uppercase text-accent">Memories</span></h2>
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 lg:px-6">
+        <div className="max-w-7xl mx-auto px-4 lg:px-6 relative z-10">
           <div className="grid grid-cols-2 md:grid-cols-4 auto-rows-[250px] md:auto-rows-[300px] gap-4">
             {[
               {
@@ -346,7 +356,7 @@ export default function Home() {
                 span: "md:col-span-2 col-span-2"
               },
             ].map((img, i) => (
-              <div key={i} className={`relative overflow-hidden group rounded-2xl shadow-xl ${img.span}`}>
+              <div key={i} className={`relative overflow-hidden group rounded-2xl shadow-xl reveal ${img.span}`} style={{ transitionDelay: `${i * 100 + 300}ms` }}>
                 <Image
                   src={img.url}
                   alt={`Memory ${i}`}
@@ -364,11 +374,11 @@ export default function Home() {
       </section>
 
       {/* 6. MUST-VISIT DESTINATIONS SECTION */}
-      <section id="destinations" className="py-32 bg-white reveal">
-        <div className="max-w-7xl mx-auto px-6 lg:px-12 w-full">
+      <section id="destinations" className="py-32 bg-white relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12 w-full relative z-10">
           <div className="mb-20 text-center">
-            <span className="luxury-text text-gray-400 text-sm block mb-4">Inspiration</span>
-            <h2 className="text-3xl md:text-4xl font-serif text-black leading-tight">Must-Visit <span className="font-light uppercase text-accent">Destinations</span></h2>
+            <span className="luxury-text text-gray-400 text-sm block mb-4 tracking-[0.3em] reveal">Inspiration</span>
+            <h2 className="text-3xl md:text-4xl font-serif text-black leading-tight reveal" style={{ transitionDelay: '200ms' }}>Must-Visit <span className="font-light uppercase text-accent">Destinations</span></h2>
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 px-4">
@@ -422,7 +432,7 @@ export default function Home() {
                 desc: "Cool climate hills often called Little England."
               }
             ].map((place, idx) => (
-              <div key={idx} className="group relative overflow-hidden rounded-xl aspect-square cursor-pointer shadow-sm">
+              <div key={idx} className="group relative overflow-hidden rounded-xl aspect-square cursor-pointer shadow-sm reveal" style={{ transitionDelay: `${idx * 100 + 400}ms` }}>
                 <Image
                   src={place.image}
                   alt={place.name}
@@ -440,7 +450,7 @@ export default function Home() {
             ))}
           </div>
 
-          <div className="mt-24 text-center">
+          <div className="mt-24 text-center reveal" style={{ transitionDelay: '1200ms' }}>
             <a
               href="https://wa.me/94728994660"
               className="bg-accent hover:bg-black text-black hover:text-white px-12 py-5 rounded-full font-bold uppercase tracking-widest text-xs shadow-2xl transition-all duration-500 inline-block hover:scale-105"

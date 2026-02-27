@@ -62,9 +62,9 @@ const Navbar = () => {
         >
             <div className="max-w-7xl mx-auto px-6 lg:px-12">
                 <div className="flex justify-between items-center">
-                    <Link href="/" className={`text-2xl font-serif tracking-tighter transition-colors duration-300 ${logoColor}`}>
+                    <a href="/" className={`text-2xl font-serif tracking-tighter transition-colors duration-300 ${logoColor}`}>
                         ZYFII <span className="font-light italic text-accent">Travel</span>
-                    </Link>
+                    </a>
 
                     {/* Desktop Navigation */}
                     <div className="hidden md:flex items-center space-x-10">
@@ -121,16 +121,13 @@ const Navbar = () => {
                             {link.name}
                         </Link>
                     ))}
-                    <a
-                        href={whatsappLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
+                    <Link
+                        href="/contact"
                         className="bg-black text-white px-10 py-4 rounded-full text-sm font-bold uppercase tracking-widest flex items-center gap-2"
                         onClick={() => setIsOpen(false)}
                     >
-                        <MessageCircle size={18} />
-                        Get a Quote
-                    </a>
+                        Contact
+                    </Link>
                 </div>
             )}
         </nav>
