@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
-import { Inter, Montserrat } from "next/font/google";
+import { Playfair_Display, Montserrat } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import WhatsAppButton from "@/components/WhatsAppButton"; // Assuming default export
+import WhatsAppButton from "@/components/WhatsAppButton";
+import ScrollEffects from "@/components/ScrollEffects";
 
-const inter = Inter({
-  variable: "--font-inter",
+const playfair = Playfair_Display({
+  variable: "--font-playfair",
   subsets: ["latin"],
 });
 
@@ -28,15 +29,16 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.variable} ${montserrat.variable} antialiased font-sans bg-gray-50 flex flex-col min-h-screen`}
+        className={`${playfair.variable} ${montserrat.variable} antialiased font-sans bg-white text-black flex flex-col min-h-screen`}
       >
+        <ScrollEffects />
         <Navbar />
         <main className="flex-grow">
           {children}
         </main>
         <Footer />
         {/* Client component for floating button */}
-        <div className="fixed bottom-8 right-8 z-50">
+        <div className="fixed bottom-8 left-8 z-50">
           <WhatsAppButton />
         </div>
       </body>

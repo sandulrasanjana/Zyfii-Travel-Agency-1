@@ -35,48 +35,44 @@ const Navbar = () => {
     // Derived state for styling
     const isTransparentStart = !scrolled && isDarkHeader;
 
-    // Navbar Background: Add a subtle gradient when transparent to aid text readability on images
+    // Navbar Background
     const navBackground = scrolled
-        ? "bg-white/95 backdrop-blur-md shadow-md py-3"
+        ? "bg-white/95 backdrop-blur-md shadow-sm py-4"
         : isTransparentStart
-            ? "bg-gradient-to-b from-black/60 to-transparent py-6"
-            : "bg-transparent py-6";
+            ? "bg-transparent py-8"
+            : "bg-white py-6";
 
     // Logo Colors
-    const logoPrimaryColor = isTransparentStart ? "text-white drop-shadow-md" : "text-primary";
-    const logoSecondaryColor = isTransparentStart ? "text-orange-300 drop-shadow-md" : "text-secondary";
+    const logoColor = isTransparentStart ? "text-white" : "text-black";
 
     // Link Colors
     const getLinkClass = (active: boolean) => {
+        const base = "text-xs font-semibold uppercase tracking-widest transition-all duration-300 ";
         if (active) {
-            return isTransparentStart
-                ? "text-white font-bold border-b-2 border-orange-400 pb-1 drop-shadow-sm"
-                : "text-primary font-bold border-b-2 border-primary pb-1";
+            return base + (isTransparentStart ? "text-accent" : "text-black border-b border-black pb-1");
         }
-        return isTransparentStart
-            ? "text-white font-medium hover:text-orange-200 drop-shadow-sm"
-            : "text-gray-700 font-medium hover:text-primary";
+        return base + (isTransparentStart ? "text-white/80 hover:text-white" : "text-gray-500 hover:text-black");
     };
 
-    const toggleColor = isTransparentStart ? "text-white" : "text-gray-800";
+    const toggleColor = isTransparentStart ? "text-white" : "text-black";
 
     return (
         <nav
-            className={`fixed w-full z-50 transition-all duration-300 ${navBackground}`}
+            className={`fixed w-full z-50 transition-all duration-500 ${navBackground}`}
         >
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-7xl mx-auto px-6 lg:px-12">
                 <div className="flex justify-between items-center">
-                    <Link href="/" className={`text-2xl font-bold font-heading ${logoPrimaryColor}`}>
-                        Zyfii<span className={logoSecondaryColor}>Travel</span>
+                    <Link href="/" className={`text-2xl font-serif tracking-tighter transition-colors duration-300 ${logoColor}`}>
+                        ZYFII <span className="font-light italic text-accent">Travel</span>
                     </Link>
 
                     {/* Desktop Navigation */}
-                    <div className="hidden md:flex items-center space-x-8">
+                    <div className="hidden md:flex items-center space-x-10">
                         {navLinks.map((link) => (
                             <Link
                                 key={link.name}
                                 href={link.href}
-                                className={`text-sm font-medium transition-colors ${getLinkClass(pathname === link.href)}`}
+                                className={getLinkClass(pathname === link.href)}
                             >
                                 {link.name}
                             </Link>
@@ -85,22 +81,25 @@ const Navbar = () => {
                             href={whatsappLink}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="bg-primary hover:bg-teal-700 text-white px-5 py-2 rounded-full font-medium transition-all flex items-center gap-2 shadow-lg"
+                            className={`px-6 py-3 rounded-full text-xs font-bold uppercase tracking-widest transition-all duration-300 shadow-sm flex items-center gap-2 ${isTransparentStart
+                                ? "bg-white text-black hover:bg-accent"
+                                : "bg-black text-white hover:bg-accent hover:text-black"
+                                }`}
                         >
-                            <MessageCircle size={18} />
-                            Get a Quote
+                            <MessageCircle size={14} />
+                            Inquire Now
                         </a>
                     </div>
 
                     {/* Mobile Menu Button */}
                     <button
-                        className={`md:hidden focus:outline-none ${toggleColor}`}
+                        className={`md:hidden focus:outline-none transition-colors duration-300 ${toggleColor}`}
                         onClick={() => setIsOpen(!isOpen)}
                     >
                         {isOpen ? (
-                            <X size={28} />
+                            <X size={24} />
                         ) : (
-                            <Menu size={28} />
+                            <Menu size={24} />
                         )}
                     </button>
                 </div>
@@ -108,30 +107,33 @@ const Navbar = () => {
 
             {/* Mobile Navigation */}
             {isOpen && (
-                <div className="md:hidden bg-white absolute top-full left-0 w-full shadow-lg border-t border-gray-100">
-                    <div className="flex flex-col px-4 py-6 space-y-4">
-                        {navLinks.map((link) => (
-                            <Link
-                                key={link.name}
-                                href={link.href}
-                                className={`text-base font-medium ${pathname === link.href ? "text-primary" : "text-gray-700"
-                                    }`}
-                                onClick={() => setIsOpen(false)}
-                            >
-                                {link.name}
-                            </Link>
-                        ))}
-                        <a
-                            href={whatsappLink}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="bg-primary hover:bg-teal-700 text-white px-5 py-3 rounded-xl font-medium text-center flex items-center justify-center gap-2"
+                <div className="md:hidden bg-white absolute top-0 left-0 w-full h-screen z-50 flex flex-col items-center justify-center space-y-8 animate-in fade-in slide-in-from-top duration-300">
+                    <button
+                        className="absolute top-8 right-8 text-black"
+                        onClick={() => setIsOpen(false)}
+                    >
+                        <X size={32} />
+                    </button>
+                    {navLinks.map((link) => (
+                        <Link
+                            key={link.name}
+                            href={link.href}
+                            className={`text-2xl font-serif uppercase tracking-widest ${pathname === link.href ? "text-accent" : "text-black"}`}
                             onClick={() => setIsOpen(false)}
                         >
-                            <MessageCircle size={18} />
-                            Get a Quote
-                        </a>
-                    </div>
+                            {link.name}
+                        </Link>
+                    ))}
+                    <a
+                        href={whatsappLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="bg-black text-white px-10 py-4 rounded-full text-sm font-bold uppercase tracking-widest flex items-center gap-2"
+                        onClick={() => setIsOpen(false)}
+                    >
+                        <MessageCircle size={18} />
+                        Get a Quote
+                    </a>
                 </div>
             )}
         </nav>
