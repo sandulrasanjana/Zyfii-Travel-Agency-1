@@ -61,84 +61,84 @@ export default function Home() {
   const featuredTours = [
     {
       title: "Sigiriya Heritage & Wildlife",
-      image: "https://images.unsplash.com/photo-1546708973-b339540b5162?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+      image: "https://res.cloudinary.com/dokkm4cxk/image/upload/v1772197267/eed44468521d2313270a60127226a9ba_mg38uy.jpg",
       duration: "3 Days / 2 Nights",
       price: "Inquire for Pricing",
       description: "Witness the ancient fortress and majestic wildlife in a curated private expedition.",
     },
     {
       title: "Southern Coastal Luxury",
-      image: "https://images.unsplash.com/photo-1544550581-5f7ceaf2f0cf?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+      image: "https://res.cloudinary.com/dokkm4cxk/image/upload/v1772196955/8829fd1a007d817dc1aad23eefad2145_qmw5yg.jpg",
       duration: "5 Days / 4 Nights",
       price: "Bespoke Rates",
       description: "Pristine beaches and colonial heritage meet in this ultimate island coastal escape.",
     },
     {
-      title: "Hill Country Elegance",
-      image: "https://images.unsplash.com/photo-1506466010722-395aa2bef877?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+      title: "Hiriketiya Beach",
+      image: "https://res.cloudinary.com/dokkm4cxk/image/upload/v1772196297/1ff30e57088dbea3ad35c253352ae9fc_mmycsh.jpg",
       duration: "2 Days / 1 Night",
       price: "Exclusive Experience",
       description: "Breathe the mist of tea plantations and emerald mountains in luxury.",
     },
     {
       title: "Wild Yala Expedition",
-      image: "https://images.unsplash.com/photo-1589901594833-855673a5a41d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+      image: "https://res.cloudinary.com/dokkm4cxk/image/upload/v1772196297/51973ac996d22553bc157ddf10f59535_xnnhxs.jpg",
       duration: "4 Days / 3 Nights",
       price: "Adventure Rates",
       description: "Deep jungle safaris looking for the elusive leopard and vibrant wildlife.",
     },
     {
       title: "Kandy Cultural Soul",
-      image: "https://images.unsplash.com/photo-1586944210214-43407e5967ee?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+      image: "https://res.cloudinary.com/dokkm4cxk/image/upload/v1772197669/d04e03e02e64b5f0297ed0c3e476e892_hvfc3s.jpg",
       duration: "3 Days / 2 Nights",
       price: "Standard Hire",
       description: "Explore the sacred temples and traditional ceremonies of our historic capital.",
     },
     {
       title: "Galle Fort Whispers",
-      image: "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+      image: "https://res.cloudinary.com/dokkm4cxk/image/upload/v1772197762/0babb4a00c08c4134975c8987e8acc59_qqhc1b.jpg",
       duration: "2 Days / 1 Night",
       price: "Day Hire",
       description: "Walk the ramparts of history in the most preserved Dutch fort in Asia.",
     },
     {
       title: "Nuwara Eliya Tea Trails",
-      image: "https://images.unsplash.com/photo-1517404212773-772921868461?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+      image: "https://res.cloudinary.com/dokkm4cxk/image/upload/v1772197951/712df76d0a1b7710ee416b9dcb00eaa1_m69v7h.jpg",
       duration: "3 Days / 2 Nights",
       price: "Cool Escape",
       description: "Stay in colonial bungalows amidst the rolling green valleys of Little England.",
     },
     {
       title: "Bentota Golden Sands",
-      image: "https://images.unsplash.com/photo-1544526226-d4568090ffb8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+      image: "https://res.cloudinary.com/dokkm4cxk/image/upload/v1772198118/12018aee436ddf14edda54ad28874753_o7sxpq.jpg",
       duration: "2 Days / 1 Night",
       price: "Beach Lovers",
       description: "Jet-ski across rivers and relax on some of the world's most beautiful shores.",
     },
     {
       title: "Trincomalee Marine Life",
-      image: "https://images.unsplash.com/photo-1589182397057-b846e499716e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+      image: "https://res.cloudinary.com/dokkm4cxk/image/upload/v1772198257/07f88ca84c2c59de8d127e2dbf67b86c_rcdrqq.jpg",
       duration: "4 Days / 3 Nights",
       price: "Marine Special",
       description: "Whale watching and coral snorkeling in the crystal blue waters of the East.",
     },
     {
       title: "Anuradhapura Holy City",
-      image: "https://images.unsplash.com/photo-1546708973-b339540b5162?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+      image: "https://res.cloudinary.com/dokkm4cxk/image/upload/v1772198325/ec08a70e909e36bc8a30c4f519bd6e40_ywi6vn.jpg",
       duration: "3 Days / 2 Nights",
       price: "Ancient Tour",
       description: "A spiritual pilgrimage to the roots of our ancient Buddhist civilization.",
     },
     {
       title: "Ella Ravana Falls",
-      image: "https://images.unsplash.com/photo-1538356111083-d24be3971bbd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+      image: "https://res.cloudinary.com/dokkm4cxk/image/upload/v1772198422/ac4832d35c00b2dde4697af41fb6260d_ilglvw.jpg",
       duration: "3 Days / 2 Nights",
       price: "Mist Escape",
       description: "Hike the 9-arch bridge and witness the legendary falls of Ravana.",
     },
     {
       title: "Polonnaruwa Chronicles",
-      image: "https://images.unsplash.com/photo-1588142345624-8b637d1d2b7d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+      image: "https://res.cloudinary.com/dokkm4cxk/image/upload/v1772198526/d82ca4a76a9775793c4d1fd4d24ff6e4_jcgbyo.jpg",
       duration: "2 Days / 1 Night",
       price: "History Rebuilt",
       description: "Cycle through the ruins of a medieval kingdom and colossal stone statues.",
@@ -198,7 +198,7 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             <div className="relative aspect-video lg:aspect-[4/3] overflow-hidden rounded-2xl shadow-2xl order-1 lg:order-1 reveal">
               <Image
-                src="https://images.unsplash.com/photo-1544550581-5f7ceaf2f0cf?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+                src="https://res.cloudinary.com/dokkm4cxk/image/upload/v1772196298/8860decac3b1dd752b3512ab64c1025a_wsiako.jpg"
                 alt="Our Travel Philosophy"
                 fill
                 className="object-cover"
