@@ -21,8 +21,20 @@
   --radius-card: var(--card-radius);
 }
 
-* {
+html {
   scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+.snap-section {
+  width: 100%;
 }
 
 /* Custom Scrollbar */
@@ -165,9 +177,45 @@ h6 {
   background-size: cover;
 }
 
+/* Horizontal Auto Scroll Marquee */
+@keyframes scroll-x {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(calc(-12 * (380px + 2rem)));
+  }
+}
+
+.animate-scroll-x {
+  display: flex;
+  width: max-content;
+  animation: scroll-x 60s linear infinite;
+}
+
+.animate-scroll-x:hover {
+  animation-play-state: paused;
+}
+
 /* Hide Scrollbar Utility */
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
+}
+
+/* Scroll Down Animation */
+@keyframes scroll-down {
+  0% {
+    transform: translateY(-100%);
+  }
+
+  50% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(100%);
+  }
 }
 
 .scrollbar-hide {

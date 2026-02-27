@@ -22,14 +22,14 @@ const Navbar = () => {
     }, []);
 
     const navLinks = [
-        { name: "Home", href: "/" },
-        { name: "About", href: "/about" },
-        { name: "Packages", href: "/packages" },
-        { name: "Gallery", href: "/gallery" },
-        { name: "Contact", href: "/contact" },
+        { name: "Home", href: "/#hero" },
+        { name: "About", href: "/#about" },
+        { name: "Packages", href: "/#packages" },
+        { name: "Gallery", href: "/#memories" },
+        { name: "Destinations", href: "/#destinations" },
     ];
 
-    const whatsappNumber = "1234567890"; // Placeholder
+    const whatsappNumber = "94728994660";
     const whatsappLink = `https://wa.me/${whatsappNumber}?text=Hi%20Zyfii,%20I'd%20like%20to%20get%20a%20quote.`;
 
     // Derived state for styling
@@ -77,18 +77,15 @@ const Navbar = () => {
                                 {link.name}
                             </Link>
                         ))}
-                        <a
-                            href={whatsappLink}
-                            target="_blank"
-                            rel="noopener noreferrer"
+                        <Link
+                            href="/contact"
                             className={`px-6 py-3 rounded-full text-xs font-bold uppercase tracking-widest transition-all duration-300 shadow-sm flex items-center gap-2 ${isTransparentStart
                                 ? "bg-white text-black hover:bg-accent"
                                 : "bg-black text-white hover:bg-accent hover:text-black"
                                 }`}
                         >
-                            <MessageCircle size={14} />
-                            Inquire Now
-                        </a>
+                            Contact
+                        </Link>
                     </div>
 
                     {/* Mobile Menu Button */}

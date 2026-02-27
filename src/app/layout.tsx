@@ -3,7 +3,6 @@ import { Playfair_Display, Montserrat } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import WhatsAppButton from "@/components/WhatsAppButton";
 import ScrollEffects from "@/components/ScrollEffects";
 
 const playfair = Playfair_Display({
@@ -36,10 +35,8 @@ export default function RootLayout({
         <main className="flex-grow">
           {children}
         </main>
-        <Footer />
-        {/* Client component for floating button */}
-        <div className="fixed bottom-8 left-8 z-50">
-          <WhatsAppButton />
+        <div>
+          <Footer />
         </div>
       </body>
     </html>

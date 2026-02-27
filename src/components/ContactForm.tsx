@@ -17,7 +17,7 @@ const ContactForm = () => {
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        const whatsappNumber = "1234567890";
+        const whatsappNumber = "94728994660";
         const text = `Name: ${formData.name}%0AEmail: ${formData.email}%0ADestination: ${formData.destination}%0AMessage: ${formData.message}`;
         const url = `https://wa.me/${whatsappNumber}?text=${text}`;
         window.open(url, "_blank");

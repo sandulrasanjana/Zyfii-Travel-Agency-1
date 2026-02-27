@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Facebook, Instagram, Twitter, MessageCircle, Phone, Mail, MapPin } from "lucide-react";
 
 const Footer = () => {
-    const whatsappNumber = "1234567890";
+    const whatsappNumber = "94728994660";
     const whatsappLink = `https://wa.me/${whatsappNumber}`;
 
     return (
@@ -31,9 +31,9 @@ const Footer = () => {
                         <h3 className="luxury-text text-accent text-xs mb-8">Navigation</h3>
                         <ul className="space-y-4">
                             {[
-                                { label: "About Us", href: "/about" },
-                                { label: "Tour Packages", href: "/packages" },
-                                { label: "Gallery", href: "/gallery" },
+                                { label: "About Us", href: "/#about" },
+                                { label: "Tour Packages", href: "/#packages" },
+                                { label: "Gallery", href: "/#memories" },
                                 { label: "Contact", href: "/contact" }
                             ].map((item) => (
                                 <li key={item.label}>
@@ -55,7 +55,7 @@ const Footer = () => {
                             </li>
                             <li className="flex items-center gap-4 text-sm text-gray-400">
                                 <Phone size={18} className="text-accent shrink-0" />
-                                <span>+94 701 536 128</span>
+                                <span>+94 72 899 4660</span>
                             </li>
                             <li className="flex items-center gap-4 text-sm text-gray-400">
                                 <Mail size={18} className="text-accent shrink-0" />
