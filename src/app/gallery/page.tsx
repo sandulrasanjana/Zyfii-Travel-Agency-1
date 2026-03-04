@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 export const metadata = {
-    title: "Gallery | Zyfii-Travel-Agency",
+    title: "Gallery | Pearl-Paradise-Travel",
     description: "See our fleet and happy travelers in our gallery.",
 };
 

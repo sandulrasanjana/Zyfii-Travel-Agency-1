@@ -11,8 +11,8 @@ const Footer = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-20">
                     {/* Brand Info */}
                     <div className="space-y-6">
-                        <Link href="/" className="text-3xl font-serif tracking-tighter text-white mb-6 block">
-                            ZYFII <span className="font-light italic text-accent">Travel</span>
+                        <Link href="/" className="text-3xl font-serif tracking-tighter text-white mb-6 block uppercase">
+                            PEARL <span className="font-light italic text-accent">PARADISE</span>
                         </Link>
                         <p className="text-gray-400 text-sm leading-relaxed max-w-xs">
                             Discover the soul of the island through curated journeys and bespoke travel excellence. Since 2018.
@@ -59,7 +59,7 @@ const Footer = () => {
                             </li>
                             <li className="flex items-center gap-4 text-sm text-gray-400">
                                 <Mail size={18} className="text-accent shrink-0" />
-                                <span>travel@zyfii.com</span>
+                                <span>travel@pearlparadise.com</span>
                             </li>
                         </ul>
                     </div>
@@ -83,7 +83,7 @@ const Footer = () => {
                 </div>
 
                 <div className="border-t border-white/5 pt-12 flex flex-col md:flex-row justify-between items-center gap-6 text-gray-600 text-[10px] uppercase tracking-[0.2em]">
-                    <p>&copy; {new Date().getFullYear()} ZYFII TRAVEL AGENCY. ALL RIGHTS RESERVED.</p>
+                    <p>&copy; {new Date().getFullYear()} PEARL PARADISE TRAVEL. ALL RIGHTS RESERVED.</p>
                     <div className="flex gap-8">
                         <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
                         <a href="#" className="hover:text-white transition-colors">Terms of Service</a>

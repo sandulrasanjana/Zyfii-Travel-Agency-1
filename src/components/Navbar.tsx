@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X, MessageCircle } from "lucide-react";
+import { Menu, X, MessageCircle, Palmtree } from "lucide-react";
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -30,7 +30,7 @@ const Navbar = () => {
     ];
 
     const whatsappNumber = "94728994660";
-    const whatsappLink = `https://wa.me/${whatsappNumber}?text=Hi%20Zyfii,%20I'd%20like%20to%20get%20a%20quote.`;
+    const whatsappLink = `https://wa.me/${whatsappNumber}?text=Hi%20Pearl%20Paradise,%20I'd%20like%20to%20get%20a%20quote.`;
 
     // Derived state for styling
     const isTransparentStart = !scrolled && isDarkHeader;
@@ -62,8 +62,12 @@ const Navbar = () => {
         >
             <div className="max-w-7xl mx-auto px-6 lg:px-12">
                 <div className="flex justify-between items-center">
-                    <a href="/" className={`text-2xl font-serif tracking-tighter transition-colors duration-300 ${logoColor}`}>
-                        ZYFII <span className="font-light italic text-accent">Travel</span>
+                    <a href="/" className={`text-2xl font-serif tracking-tighter transition-colors duration-300 ${logoColor} flex items-center gap-2`}>
+                        <Palmtree className="text-accent" size={32} />
+                        <div className="flex flex-col leading-none">
+                            <span className="text-xl tracking-[0.2em]">PEARL</span>
+                            <span className="font-light italic text-accent text-sm ml-auto">PARADISE</span>
+                        </div>
                     </a>
 
                     {/* Desktop Navigation */}

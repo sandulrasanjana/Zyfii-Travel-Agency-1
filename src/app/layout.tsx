@@ -16,7 +16,7 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "Zyfii-Travel-Agency | Premium Tour Hire",
+  title: "Pearl-Paradise-Travel | Premium Tour Hire",
   description: "Modern, high-conversion tour hire services. Book your next adventure via WhatsApp.",
 };
 

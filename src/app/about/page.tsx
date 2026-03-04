@@ -2,13 +2,13 @@ import Image from "next/image";
 import { Award, Users, Calendar } from "lucide-react";
 
 export const metadata = {
-    title: "About Us | Zyfii-Travel-Agency",
+    title: "About Us | Pearl-Paradise-Travel",
     description: "Learn about our history and commitment to premium tour hire services.",
 };
 
 export default function About() {
     const milestones = [
-        { year: "2018", title: "Founded", desc: "Zyfii Travel started with just two vans and a passion for travel." },
+        { year: "2018", title: "Founded", desc: "Pearl Paradise started with just two vans and a passion for travel." },
         { year: "2020", title: "Expansion", desc: "Expanded our fleet to include luxury coaches and SUVs." },
         { year: "2022", title: "Award Winning", desc: "Recognized as the 'Best Local Tour Operator' in the region." },
         { year: "2024", title: "Going Digital", desc: "Launched our new digital platform to serve you better." },
@@ -19,7 +19,7 @@ export default function About() {
             {/* Header */}
             <header className="bg-primary py-20 text-center text-white relative overflow-hidden">
                 <div className="relative z-10">
-                    <h1 className="text-4xl md:text-5xl font-bold font-heading mb-4">About Zyfii</h1>
+                    <h1 className="text-4xl md:text-5xl font-bold font-heading mb-4">About Pearl Paradise</h1>
                     <p className="text-lg opacity-90">Your trusted partner in travel.</p>
                 </div>
                 <div className="absolute inset-0 opacity-10 pattern-dots"></div>
@@ -39,7 +39,7 @@ export default function About() {
                     <div>
                         <h2 className="text-3xl font-bold font-heading text-primary mb-6">Driven by Passion</h2>
                         <p className="text-gray-600 mb-6 leading-relaxed">
-                            At Zyfii-Travel-Agency, we believe that the journey is just as important as the destination.
+                            At Pearl Paradise Travel, we believe that the journey is just as important as the destination.
                             Founded with a mission to provide seamless, comfortable, and reliable tour hire services,
                             we have grown into a trusted name in the industry.
                         </p>

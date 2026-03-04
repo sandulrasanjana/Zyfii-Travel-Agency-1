@@ -1,7 +1,7 @@
 import TourCard from "@/components/TourCard";
 
 export const metadata = {
-    title: "Tour Packages | Zyfii-Travel-Agency",
+    title: "Tour Packages | Pearl-Paradise-Travel",
     description: "Browse our exclusive tour packages and hire premium vehicles for your trip.",
 };
 

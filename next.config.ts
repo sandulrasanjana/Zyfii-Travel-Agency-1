@@ -17,7 +17,9 @@ const nextConfig: NextConfig = {
         hostname: "res.cloudinary.com",
       },
     ],
+    unoptimized: true,
   },
+  output: 'export',
 };
 
 export default nextConfig;

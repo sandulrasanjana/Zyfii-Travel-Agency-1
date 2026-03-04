@@ -1,0 +1,15 @@
+﻿{
+  "status": "success",
+  "result": [
+    {
+      "projectId": "device-streaming-ed4a33b6",
+      "projectNumber": "950331821371",
+      "name": "projects/device-streaming-ed4a33b6",
+      "resources": {
+        "hostingSite": "device-streaming-ed4a33b6"
+      },
+      "state": "ACTIVE",
+      "etag": "1_77f03de8-ed8a-4d0f-ad75-9cbacb1c0330"
+    }
+  ]
+}

@@ -2,7 +2,7 @@ import ContactForm from "@/components/ContactForm";
 import { Mail, Phone, MapPin } from "lucide-react";
 
 export const metadata = {
-    title: "Contact Us | Zyfii-Travel-Agency",
+    title: "Contact Us | Pearl-Paradise-Travel",
     description: "Get in touch with us to book your next tour.",
 };
 
@@ -37,7 +37,7 @@ export default function Contact() {
                                 </div>
                                 <div>
                                     <h3 className="text-lg font-bold font-heading">Email</h3>
-                                    <p className="text-gray-500">info@zyfii-travel.com</p>
+                                    <p className="text-gray-500">info@pearlparadise.com</p>
                                 </div>
                             </div>
 

@@ -11,8 +11,8 @@ interface TourCardProps {
 }
 
 const TourCard = ({ title, image, duration, price, description }: TourCardProps) => {
-    const whatsappNumber = "0701536128";
-    const message = `Hi Zyfii, I'm interested in the ${title} package.`;
+    const whatsappNumber = "94728994660";
+    const message = `Hi Pearl Paradise, I'm interested in the ${title} package.`;
     const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
 
     return (
