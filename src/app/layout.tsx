@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ScrollEffects from "@/components/ScrollEffects";
+import WhatsAppButton from "@/components/WhatsAppButton";
 
 const playfair = Playfair_Display({
   variable: "--font-playfair",
@@ -35,6 +36,7 @@ export default function RootLayout({
         <main className="flex-grow">
           {children}
         </main>
+        <WhatsAppButton />
         <div>
           <Footer />
         </div>
