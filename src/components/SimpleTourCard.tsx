@@ -40,7 +40,7 @@ const SimpleTourCard = ({ title, image, duration, price, description }: SimpleTo
                     className="w-full bg-black hover:bg-accent text-white hover:text-black py-2 rounded-lg font-bold text-[9px] uppercase tracking-[0.2em] transition-all duration-500 flex items-center justify-center gap-2 shadow-lg hover:shadow-accent/20 mt-auto"
                 >
                     <MessageCircle size={12} />
-                    Inquiry Now
+                    Booking Now
                 </a>
             </div>
         </div>
