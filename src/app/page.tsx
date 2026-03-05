@@ -332,27 +332,27 @@ export default function Home() {
           <div className="grid grid-cols-2 md:grid-cols-4 auto-rows-[250px] md:auto-rows-[300px] gap-4">
             {[
               {
-                url: "https://images.unsplash.com/photo-1544550581-5f7ceaf2f0cf?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                url: "https://res.cloudinary.com/dokkm4cxk/image/upload/v1772685945/ce13cbc49f658bc2003adc4d8efa6292_yjaeoy.jpg",
                 span: "md:col-span-2 md:row-span-2 col-span-2"
               },
               {
-                url: "https://images.unsplash.com/photo-1589182397057-b846e499716e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                url: "https://res.cloudinary.com/dokkm4cxk/image/upload/v1772685942/cc851015cb976153445a39868fb40061_ymoric.jpg",
                 span: "col-span-1"
               },
               {
-                url: "https://images.unsplash.com/photo-1578319439584-104c94d37305?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                url: "https://res.cloudinary.com/dokkm4cxk/image/upload/v1772685942/961f92730632643995eaec6f37b7032f_zdbuyn.jpg",
                 span: "col-span-1"
               },
               {
-                url: "https://images.unsplash.com/photo-1588142345624-8b637d1d2b7d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                url: "https://res.cloudinary.com/dokkm4cxk/image/upload/v1772198526/d82ca4a76a9775793c4d1fd4d24ff6e4_jcgbyo.jpg",
                 span: "col-span-1 md:row-span-2"
               },
               {
-                url: "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                url: "https://res.cloudinary.com/dokkm4cxk/image/upload/v1772685946/80621459aaf69ada85b0b2bf7e444eff_o50ifo.jpg",
                 span: "col-span-1"
               },
               {
-                url: "https://images.unsplash.com/photo-1546708973-b339540b5162?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                url: "https://res.cloudinary.com/dokkm4cxk/image/upload/v1772685942/78505e368bfee005ed9a2c42c19bdada_bg2fia.jpg",
                 span: "md:col-span-2 col-span-2"
               },
             ].map((img, i) => (
@@ -386,49 +386,49 @@ export default function Home() {
               {
                 name: "Sigiriya Rock",
                 type: "Ancient Wonder",
-                image: "https://images.unsplash.com/photo-1546708973-b339540b5162?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                image: "https://res.cloudinary.com/dokkm4cxk/image/upload/v1772197267/eed44468521d2313270a60127226a9ba_mg38uy.jpg",
                 desc: "The 'Lion Rock' fortress, a UNESCO world heritage site."
               },
               {
                 name: "Ella Highlands",
                 type: "Mountain Escape",
-                image: "https://images.unsplash.com/photo-1544550581-5f7ceaf2f0cf?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                image: "https://res.cloudinary.com/dokkm4cxk/image/upload/v1772687026/adca85136d37ce2af6748fe0f9cbd9ad_pt6lrn.jpg",
                 desc: "Tea plantations and the famous Nine Arch Bridge."
               },
               {
                 name: "Galle Fort",
                 type: "Colonial Heritage",
-                image: "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                image: "https://res.cloudinary.com/dokkm4cxk/image/upload/v1772687145/c0b07df7a86435de9b95d80978cc2631_mr1hs0.jpg",
                 desc: "Charming architecture within colonial ramparts."
               },
               {
                 name: "Yala Safari",
                 type: "Wildlife Safari",
-                image: "https://images.unsplash.com/photo-1589901594833-855673a5a41d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                image: "https://res.cloudinary.com/dokkm4cxk/image/upload/v1772687267/1811d4cf694ab9bdecdae4d8f0a84809_bmqldu.jpg",
                 desc: "The best place to spot leopards in their habitat."
               },
               {
                 name: "Kandy Temple",
                 type: "Cultural Capital",
-                image: "https://images.unsplash.com/photo-1586944210214-43407e5967ee?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                image: "https://res.cloudinary.com/dokkm4cxk/image/upload/v1772687332/3f17304aea5ee39920f5b1d80c85a7f4_umnkjz.jpg",
                 desc: "Home to the sacred tooth relic of the Buddha."
               },
               {
                 name: "Mirissa Coast",
                 type: "Beach Paradise",
-                image: "https://images.unsplash.com/photo-1544526226-d4568090ffb8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                image: "https://res.cloudinary.com/dokkm4cxk/image/upload/v1772687447/21b0bfe20e8cdc809a8e4e3f71f3cdcf_vm8ilh.jpg",
                 desc: "Golden sands and legendary whale watching."
               },
               {
                 name: "Polonnaruwa",
                 type: "Ancient Kingdom",
-                image: "https://images.unsplash.com/photo-1590518603681-79e5a1b3a165?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                image: "https://res.cloudinary.com/dokkm4cxk/image/upload/v1772687524/4078a3ca74ef0e10cde5fa3dfe542240_atgbhn.jpg",
                 desc: "Grand ruins of the medieval island capital."
               },
               {
                 name: "Nuwara Eliya",
                 type: "Little England",
-                image: "https://images.unsplash.com/photo-1586944210214-43407e5967ee?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                image: "https://res.cloudinary.com/dokkm4cxk/image/upload/v1772687629/fcdad1ed9f25dacf9b6e58e5fb2de7d3_xle1vb.jpg",
                 desc: "Cool climate hills often called Little England."
               }
             ].map((place, idx) => (

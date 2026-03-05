@@ -6,7 +6,7 @@ export const metadata = {
 };
 
 const images = [
-    "https://images.unsplash.com/photo-1533473359331-0135ef1bcfb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    "https://res.cloudinary.com/dokkm4cxk/image/upload/v1772685945/ce13cbc49f658bc2003adc4d8efa6292_yjaeoy.jpg",
     "https://images.unsplash.com/photo-1568254183919-78a4f43a2877?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
     "https://images.unsplash.com/photo-1542361345-89e58247f2d1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
     "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
