@@ -13,8 +13,12 @@ import {
     Waves,
     Mountain,
     Palmtree,
-    Coffee
+    Coffee,
+    PlaneTakeoff,
+    PlaneLanding,
+    Car
 } from "lucide-react";
+
 
 const CustomTourPart = () => {
     const [step, setStep] = useState(1);
@@ -23,8 +27,10 @@ const CustomTourPart = () => {
         groupSize: "2 People",
         luxuryLevel: "Premium",
         interests: [] as string[],
+        transport: [] as string[],
         message: "",
     });
+
 
     const durationOptions = ["1-3 Days", "4-7 Days", "8-14 Days", "15+ Days"];
     const luxuryOptions = ["Standard", "Premium", "Elite Luxury"];
@@ -37,6 +43,13 @@ const CustomTourPart = () => {
         { name: "Scenic Coastal", icon: Palmtree },
     ];
 
+    const transportOptions = [
+        { name: "Airport Pickup", icon: PlaneLanding },
+        { name: "Airport Drop", icon: PlaneTakeoff },
+        { name: "Private Taxi Hire", icon: Car },
+    ];
+
+
     const handleInterestToggle = (interest: string) => {
         setPreferences((prev) => ({
             ...prev,
@@ -46,6 +59,16 @@ const CustomTourPart = () => {
         }));
     };
 
+    const handleTransportToggle = (service: string) => {
+        setPreferences((prev) => ({
+            ...prev,
+            transport: prev.transport.includes(service)
+                ? prev.transport.filter((s) => s !== service)
+                : [...prev.transport, service],
+        }));
+    };
+
+
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         const whatsappNumber = "94728994660";
@@ -53,8 +76,10 @@ const CustomTourPart = () => {
             `*Duration:* ${preferences.duration}%0A` +
             `*Group Size:* ${preferences.groupSize}%0A` +
             `*Experience Level:* ${preferences.luxuryLevel}%0A` +
-            `*Interests:* ${preferences.interests.join(", ")}%0A` +
+            `*Interests:* ${preferences.interests.join(", ") || "Custom"}%0A` +
+            `*Transport Services:* ${preferences.transport.join(", ") || "None selected"}%0A` +
             `*Additional Details:* ${preferences.message}`;
+
 
         const url = `https://wa.me/${whatsappNumber}?text=${text}`;
         window.open(url, "_blank");
@@ -91,7 +116,8 @@ const CustomTourPart = () => {
                             {[
                                 { icon: Star, text: "Hand-picked luxury boutique stays" },
                                 { icon: Heart, text: "Personalized itineraries based on your pace" },
-                                { icon: Users, text: "Dedicated private chauffeur & expert guide" }
+                                { icon: Users, text: "Dedicated private chauffeur & expert guide" },
+                                { icon: Car, text: "24/7 Airport Pickup & Drop Transfers" }
                             ].map((item, i) => (
                                 <div key={i} className="flex items-center gap-4 group">
                                     <div className="w-10 h-10 rounded-full border border-gray-100 flex items-center justify-center group-hover:border-accent group-hover:bg-accent/10 transition-all duration-500">
@@ -147,6 +173,34 @@ const CustomTourPart = () => {
                                                     }`}
                                             />
                                             <span className={`text-[9px] uppercase tracking-tighter text-center ${preferences.interests.includes(opt.name) ? "text-black font-bold" : "text-gray-400"
+                                                }`}>
+                                                {opt.name}
+                                            </span>
+                                        </button>
+                                    ))}
+                                </div>
+                            </div>
+
+                            {/* Transport Services */}
+                            <div>
+                                <label className="text-[10px] uppercase tracking-[0.3em] text-accent font-bold mb-6 block">Transport & Transfers</label>
+                                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                                    {transportOptions.map((opt) => (
+                                        <button
+                                            key={opt.name}
+                                            type="button"
+                                            onClick={() => handleTransportToggle(opt.name)}
+                                            className={`flex flex-col items-center justify-center p-4 rounded-2xl border transition-all duration-500 group ${preferences.transport.includes(opt.name)
+                                                ? "bg-accent/10 border-accent shadow-[0_0_20px_rgba(229,204,118,0.1)]"
+                                                : "border-gray-100 hover:border-gray-200 hover:bg-white"
+                                                }`}
+                                        >
+                                            <opt.icon
+                                                size={20}
+                                                className={`mb-3 transition-transform duration-500 group-hover:scale-110 ${preferences.transport.includes(opt.name) ? "text-accent" : "text-gray-400"
+                                                    }`}
+                                            />
+                                            <span className={`text-[9px] uppercase tracking-tighter text-center ${preferences.transport.includes(opt.name) ? "text-black font-bold" : "text-gray-400"
                                                 }`}>
                                                 {opt.name}
                                             </span>
