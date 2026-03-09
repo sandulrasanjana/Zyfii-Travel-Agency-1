@@ -5,6 +5,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { Search, Shield, UserCheck, Clock, CheckCircle, ChevronRight, ChevronLeft, MessageCircle } from "lucide-react";
 import SimpleTourCard from "@/components/SimpleTourCard";
+import CustomTourPart from "@/components/CustomTourPart";
+
 
 export default function Home() {
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -295,7 +297,11 @@ export default function Home() {
         </div>
       </section>
 
+      {/* CUSTOM TOUR SECTION */}
+      <CustomTourPart />
+
       {/* 4. WHY CHOOSE OUR COMPANY */}
+
       <section id="why-us" className="py-32 flex items-center bg-white relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 lg:px-12 text-center w-full relative z-10">
           <div className="mb-24">

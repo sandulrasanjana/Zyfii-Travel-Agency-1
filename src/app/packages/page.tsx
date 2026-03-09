@@ -1,4 +1,6 @@
 import TourCard from "@/components/TourCard";
+import CustomTourPart from "@/components/CustomTourPart";
+
 
 export const metadata = {
     title: "Tour Packages | Pearl-Paradise-Travel",
@@ -68,6 +70,10 @@ export default function Packages() {
                         <TourCard key={idx} {...pkg} />
                     ))}
                 </div>
+            </div>
+
+            <div className="mt-20">
+                <CustomTourPart />
             </div>
         </div>
     );
