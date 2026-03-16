@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X, MessageCircle, Palmtree } from "lucide-react";
+import { Menu, X, MessageCircle, Waves } from "lucide-react";
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -62,11 +62,16 @@ const Navbar = () => {
         >
             <div className="max-w-7xl mx-auto px-6 lg:px-12">
                 <div className="flex justify-between items-center">
-                    <a href="/" className={`text-2xl font-serif tracking-tighter transition-colors duration-300 ${logoColor} flex items-center gap-2`}>
-                        <Palmtree className="text-accent" size={32} />
-                        <div className="flex flex-col leading-none">
-                            <span className="text-xl tracking-[0.2em]">PEARL</span>
-                            <span className="font-light italic text-accent text-sm ml-auto">PARADISE</span>
+                    <a href="/" className="group flex items-center gap-3 no-underline">
+                        <div className="relative flex items-center justify-center">
+                            <div className="w-10 h-10 border border-accent/30 rounded-full flex items-center justify-center transition-all duration-500 group-hover:border-accent">
+                                <Waves className="text-accent" size={20} />
+                            </div>
+                            <div className="absolute -top-1 -right-1 w-2 h-2 bg-accent rounded-full animate-pulse"></div>
+                        </div>
+                        <div className="flex flex-col">
+                            <span className={`text-xl font-serif tracking-[0.25em] leading-none ${logoColor}`}>PEARL</span>
+                            <span className="text-[10px] tracking-[0.4em] font-medium text-accent mt-1 uppercase leading-none">PARADISE</span>
                         </div>
                     </a>
 

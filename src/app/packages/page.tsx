@@ -1,5 +1,4 @@
 import TourCard from "@/components/TourCard";
-import CustomTourPart from "@/components/CustomTourPart";
 
 
 export const metadata = {
@@ -72,9 +71,6 @@ export default function Packages() {
                 </div>
             </div>
 
-            <div className="mt-20">
-                <CustomTourPart />
-            </div>
         </div>
     );
 }

@@ -3,14 +3,23 @@
 import { useRef, useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Search, Shield, UserCheck, Clock, CheckCircle, ChevronRight, ChevronLeft, MessageCircle } from "lucide-react";
+import { Search, Shield, UserCheck, Clock, CheckCircle, ChevronRight, ChevronLeft, MessageCircle, X, Plane, Map } from "lucide-react";
 import SimpleTourCard from "@/components/SimpleTourCard";
-import CustomTourPart from "@/components/CustomTourPart";
 
 
 export default function Home() {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
+  const [selectedDestination, setSelectedDestination] = useState<any>(null);
+  const [heroIndex, setHeroIndex] = useState(0);
+
+  const heroImages = [
+    "https://images.unsplash.com/photo-1546708973-b339540b5162?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=90",
+    "https://res.cloudinary.com/dokkm4cxk/image/upload/v1772687026/adca85136d37ce2af6748fe0f9cbd9ad_pt6lrn.jpg",
+    "https://res.cloudinary.com/dokkm4cxk/image/upload/v1772687267/1811d4cf694ab9bdecdae4d8f0a84809_bmqldu.jpg",
+    "https://res.cloudinary.com/dokkm4cxk/image/upload/v1772687447/21b0bfe20e8cdc809a8e4e3f71f3cdcf_vm8ilh.jpg",
+    "https://res.cloudinary.com/dokkm4cxk/image/upload/v1772687629/fcdad1ed9f25dacf9b6e58e5fb2de7d3_xle1vb.jpg"
+  ];
 
   const scrollAmount = 296; // Fixed: Card(256px) + Gap(40px)
 
@@ -42,7 +51,7 @@ export default function Home() {
     }
   };
 
-  // Auto-play effect
+  // Auto-play effect for tours
   useEffect(() => {
     const timer = setInterval(() => {
       if (scrollRef.current) {
@@ -59,6 +68,14 @@ export default function Home() {
 
     return () => clearInterval(timer);
   }, []);
+
+  // Hero background slider auto-play
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setHeroIndex((prev) => (prev + 1) % heroImages.length);
+    }, 15000);
+    return () => clearInterval(timer);
+  }, [heroImages.length]);
 
   const featuredTours = [
     {
@@ -151,15 +168,23 @@ export default function Home() {
     <div className="flex flex-col selection:bg-accent selection:text-black min-h-screen font-sans">
 
       {/* 1. HERO SECTION */}
-      <section id="hero" className="relative h-screen flex items-center justify-center text-center text-white overflow-hidden">
-        <div className="absolute inset-0 z-0 scale-105 animate-slow-zoom">
-          <Image
-            src="https://images.unsplash.com/photo-1546708973-b339540b5162?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=90"
-            alt="Sigiriya Rock Fortress Sri Lanka"
-            fill
-            className="object-cover brightness-50"
-            priority
-          />
+      <section id="hero" className="relative h-screen flex items-center justify-center text-center text-white overflow-hidden bg-black">
+        <div className="absolute inset-0 z-0">
+          {heroImages.map((img, idx) => (
+            <div
+              key={idx}
+              className={`absolute inset-0 transition-opacity duration-[4000ms] ease-in-out ${idx === heroIndex ? "opacity-100" : "opacity-0"
+                } scale-105 animate-slow-zoom`}
+            >
+              <Image
+                src={img}
+                alt={`Sri Lanka Paradise ${idx + 1}`}
+                fill
+                className="object-cover brightness-40"
+                priority={idx === 0}
+              />
+            </div>
+          ))}
         </div>
         <div className="relative z-10 px-6 max-w-6xl mx-auto mt-20 md:mt-24">
           <span className="luxury-text text-accent text-[10px] md:text-sm mb-8 block fade-in-up tracking-[0.2em] md:tracking-[0.3em] font-medium opacity-90">The Essence of Sri Lanka</span>
@@ -167,21 +192,43 @@ export default function Home() {
             Travel With <br />
             <span className=" font-light lowercase">Unmatched Elegance</span>
           </h1>
-          <p className="text-[10px] sm:text-xs md:text-base lg:text-lg mb-12 font-light tracking-[0.2em] uppercase max-w-2xl mx-auto opacity-80 fade-in-up delay-200 leading-relaxed">
+          <p className="text-[10px] sm:text-xs md:text-base lg:text-lg mb-12 font-light tracking-[0.2em] uppercase max-w-2xl mx-auto fade-in-up delay-200 leading-relaxed">
             Premium Tour Hire & Bespoke Travel Experiences
           </p>
 
-          <div className="fade-in-up delay-300 flex flex-col items-center gap-10 mt-8">
+          <div className="fade-in-up delay-300 flex items-center justify-center flex-wrap gap-4 md:gap-6 mt-12 pb-12">
             <Link
               href="#packages"
-              className="bg-accent hover:bg-white text-black px-12 py-5 rounded-full font-bold uppercase tracking-widest text-xs transition-all duration-500 shadow-2xl hover:scale-105"
+              className="group flex items-center justify-center gap-3 bg-accent hover:bg-white text-black w-[180px] md:w-[220px] py-4 md:py-5 rounded-full font-bold uppercase tracking-widest text-[10px] md:text-xs transition-all duration-500 shadow-2xl hover:scale-105 border border-accent hover:border-white"
             >
               Our Tours
             </Link>
 
+            <a
+              href="https://wa.me/94728994660?text=Hi, I would like to book an Airport Pickup service."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex items-center justify-center gap-3 bg-white/10 backdrop-blur-md hover:bg-white text-white hover:text-black w-[180px] md:w-[220px] py-4 md:py-5 rounded-full font-bold uppercase tracking-widest text-[10px] md:text-xs transition-all duration-500 shadow-xl hover:scale-105 border border-white/20"
+            >
+              <Plane size={16} className="text-accent group-hover:text-black transition-colors" />
+              Airport Pickup
+            </a>
+
+            <a
+              href="https://wa.me/94728994660?text=Hi, I'm interested in planning a Custom Tour itinerary."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex items-center justify-center gap-3 bg-black/40 backdrop-blur-md hover:bg-accent text-white hover:text-black w-[180px] md:w-[220px] py-4 md:py-5 rounded-full font-bold uppercase tracking-widest text-[10px] md:text-xs transition-all duration-500 shadow-xl hover:scale-105 border border-white/10 hover:border-accent"
+            >
+              <Map size={16} className="text-accent group-hover:text-black transition-colors" />
+              Custom Tour
+            </a>
+          </div>
+
+          <div className="fade-in-up delay-300 flex flex-col items-center gap-8">
             {/* Compact Minimalist Scroll Indicator */}
             <div className="flex flex-col items-center gap-3 group cursor-pointer" onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}>
-              <span className="text-[9px] uppercase tracking-[0.5em] font-bold text-white/20 group-hover:text-accent transition-all duration-700">Scroll to Explore</span>
+              <span className="text-[9px] uppercase tracking-[0.5em] font-bold text-white/60 group-hover:text-accent transition-all duration-700">Scroll to Explore</span>
               <div className="w-[1px] h-10 md:h-12 bg-white/10 relative overflow-hidden">
                 <div className="absolute top-0 left-0 w-full h-full bg-accent animate-[scroll-down_3s_ease-in-out_infinite]"></div>
               </div>
@@ -298,7 +345,7 @@ export default function Home() {
       </section>
 
       {/* CUSTOM TOUR SECTION */}
-      <CustomTourPart />
+
 
       {/* 4. WHY CHOOSE OUR COMPANY */}
 
@@ -393,64 +440,78 @@ export default function Home() {
                 name: "Sigiriya Rock",
                 type: "Ancient Wonder",
                 image: "https://res.cloudinary.com/dokkm4cxk/image/upload/v1772197267/eed44468521d2313270a60127226a9ba_mg38uy.jpg",
-                desc: "The 'Lion Rock' fortress, a UNESCO world heritage site."
+                desc: "The 'Lion Rock' fortress, a UNESCO world heritage site. It features an ancient palace built on a massive 200m rock, surrounded by lush gardens and fountains.",
+                caption: "The 8th Wonder of the World"
               },
               {
                 name: "Ella Highlands",
                 type: "Mountain Escape",
                 image: "https://res.cloudinary.com/dokkm4cxk/image/upload/v1772687026/adca85136d37ce2af6748fe0f9cbd9ad_pt6lrn.jpg",
-                desc: "Tea plantations and the famous Nine Arch Bridge."
+                desc: "Mist-covered peaks, lush tea plantations, and the iconic Nine Arch Bridge await in this hill country paradise.",
+                caption: "Heart of the Hill Country"
               },
               {
                 name: "Galle Fort",
                 type: "Colonial Heritage",
                 image: "https://res.cloudinary.com/dokkm4cxk/image/upload/v1772687145/c0b07df7a86435de9b95d80978cc2631_mr1hs0.jpg",
-                desc: "Charming architecture within colonial ramparts."
+                desc: "A living museum where Dutch colonial architecture meets modern boutiques and charming cafes along the southern coast.",
+                caption: "Echoes of Colonial Elegance"
               },
               {
                 name: "Yala Safari",
                 type: "Wildlife Safari",
                 image: "https://res.cloudinary.com/dokkm4cxk/image/upload/v1772687267/1811d4cf694ab9bdecdae4d8f0a84809_bmqldu.jpg",
-                desc: "The best place to spot leopards in their habitat."
+                desc: "One of the world's most dense leopard populations resides here, alongside elephants, bears, and exotic birds.",
+                caption: "The Wild Untamed Spirit"
               },
               {
                 name: "Kandy Temple",
                 type: "Cultural Capital",
                 image: "https://res.cloudinary.com/dokkm4cxk/image/upload/v1772687332/3f17304aea5ee39920f5b1d80c85a7f4_umnkjz.jpg",
-                desc: "Home to the sacred tooth relic of the Buddha."
+                desc: "Sri Lanka's spiritual heart, housing the Sacred Tooth Relic of the Buddha within its majestic golden-roofed temple.",
+                caption: "Sanctuary of Ancient Echoes"
               },
               {
                 name: "Mirissa Coast",
                 type: "Beach Paradise",
                 image: "https://res.cloudinary.com/dokkm4cxk/image/upload/v1772687447/21b0bfe20e8cdc809a8e4e3f71f3cdcf_vm8ilh.jpg",
-                desc: "Golden sands and legendary whale watching."
+                desc: "Famous for its crescent-shaped beach, sunset vibes, and as a world-class destination for blue whale watching.",
+                caption: "Golden Palms & Blue Horizons"
               },
               {
                 name: "Polonnaruwa",
                 type: "Ancient Kingdom",
                 image: "https://res.cloudinary.com/dokkm4cxk/image/upload/v1772687524/4078a3ca74ef0e10cde5fa3dfe542240_atgbhn.jpg",
-                desc: "Grand ruins of the medieval island capital."
+                desc: "The island's second ancient capital, featuring exceptionally preserved stone sculptures and massive brick stupas.",
+                caption: "Relics of a Golden Era"
               },
               {
                 name: "Nuwara Eliya",
                 type: "Little England",
                 image: "https://res.cloudinary.com/dokkm4cxk/image/upload/v1772687629/fcdad1ed9f25dacf9b6e58e5fb2de7d3_xle1vb.jpg",
-                desc: "Cool climate hills often called Little England."
+                desc: "Experience the cool climate, colonial-style bungalows, and rolling green valleys of Little England.",
+                caption: "Whispers of the Misty Valleys"
               }
             ].map((place, idx) => (
-              <div key={idx} className="group relative overflow-hidden rounded-xl aspect-square cursor-pointer shadow-sm reveal" style={{ transitionDelay: `${idx * 100 + 400}ms` }}>
+              <div
+                key={idx}
+                onClick={() => setSelectedDestination(place)}
+                className="group relative overflow-hidden rounded-xl aspect-[4/5] md:aspect-square cursor-pointer shadow-lg reveal transition-all duration-500 hover:shadow-2xl hover:-translate-y-1"
+                style={{ transitionDelay: `${idx * 100 + 400}ms` }}
+              >
                 <Image
                   src={place.image}
                   alt={place.name}
                   fill
-                  className="object-cover transition-transform duration-1000 group-hover:scale-110"
+                  className="object-cover transition-transform duration-[1.5s] group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-4 md:p-6 text-white text-left">
-                  <span className="text-[8px] md:text-[9px] uppercase tracking-widest text-accent font-bold mb-1">{place.type}</span>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent flex flex-col justify-end p-4 md:p-6 text-white text-left transition-all duration-500">
+                  <span className="text-[8px] md:text-[9px] uppercase tracking-widest text-accent font-bold mb-1 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">{place.type}</span>
                   <h3 className="text-lg md:text-xl font-serif mb-1 leading-tight">{place.name}</h3>
-                  <p className="text-white/60 text-[10px] leading-relaxed hidden md:block opacity-0 group-hover:opacity-100 transition-opacity duration-500 line-clamp-2">
-                    {place.desc}
+                  <p className="text-white/60 text-[10px] uppercase tracking-[0.1em] opacity-80 mb-2 truncate group-hover:block transition-all duration-500">
+                    {place.caption}
                   </p>
+                  <div className="w-0 group-hover:w-full h-px bg-accent/50 transition-all duration-700"></div>
                 </div>
               </div>
             ))}
@@ -466,6 +527,73 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* DESTINATION MODAL */}
+      {selectedDestination && (
+        <div
+          className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-8 animate-in fade-in duration-300"
+          onClick={() => setSelectedDestination(null)}
+        >
+          <div className="absolute inset-0 bg-black/80 backdrop-blur-md"></div>
+
+          <div
+            className="bg-white rounded-3xl overflow-hidden max-w-4xl w-full relative z-10 shadow-2xl flex flex-col md:flex-row animate-in zoom-in-95 slide-in-from-bottom-5 duration-500 ease-out"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Modal Image Section */}
+            <div className="relative w-full md:w-1/2 aspect-[4/3] md:aspect-auto">
+              <Image
+                src={selectedDestination.image}
+                alt={selectedDestination.name}
+                fill
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent md:hidden"></div>
+            </div>
+
+            {/* Modal Content Section */}
+            <div className="w-full md:w-1/2 p-8 md:p-12 flex flex-col justify-center relative bg-white">
+              <button
+                onClick={() => setSelectedDestination(null)}
+                className="absolute top-6 right-6 text-gray-400 hover:text-black transition-colors p-2 bg-gray-50 rounded-full"
+              >
+                <X size={24} />
+              </button>
+
+              <div className="mb-8">
+                <span className="text-accent text-[10px] md:text-xs uppercase tracking-[0.3em] font-bold mb-3 block">
+                  {selectedDestination.type}
+                </span>
+                <h2 className="text-3xl md:text-5xl font-serif text-black mb-4 leading-tight">
+                  {selectedDestination.name}
+                </h2>
+                <div className="w-12 h-1 bg-accent/30 rounded-full"></div>
+              </div>
+
+              <div className="space-y-6">
+                <p className="text-gray-500 text-xs md:text-sm uppercase tracking-[0.2em] font-medium leading-relaxed italic opacity-80">
+                  "{selectedDestination.caption}"
+                </p>
+                <p className="text-gray-600 text-sm md:text-base leading-relaxed font-light">
+                  {selectedDestination.desc}
+                </p>
+              </div>
+
+              <div className="mt-12">
+                <a
+                  href={`https://wa.me/94728994660?text=I'm interested in visiting ${selectedDestination.name}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-4 bg-black text-white px-10 py-5 rounded-full font-bold uppercase tracking-widest text-xs hover:bg-accent hover:text-black transition-all duration-500 group shadow-xl"
+                >
+                  Plan This Journey
+                  <ChevronRight size={16} className="transition-transform group-hover:translate-x-1" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

@@ -106,7 +106,7 @@ h6 {
 }
 
 .animate-slow-zoom {
-  animation: slow-zoom 20s ease-in-out infinite alternate;
+  animation: slow-zoom 60s ease-in-out infinite alternate;
 }
 
 @keyframes fade-in-up {
