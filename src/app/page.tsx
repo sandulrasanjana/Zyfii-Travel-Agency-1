@@ -84,6 +84,7 @@ export default function Home() {
       duration: "3 Days / 2 Nights",
       price: "Inquire for Pricing",
       description: "Witness the ancient fortress and majestic wildlife in a curated private expedition.",
+      itinerary: "Day 1: Arrival & Sigiriya Sunset Climb\nDay 2: Morning Safari in Minneriya National Park\nDay 3: Dambulla Cave Temple visit & Departure",
     },
     {
       title: "Southern Coastal Luxury",
@@ -91,6 +92,7 @@ export default function Home() {
       duration: "5 Days / 4 Nights",
       price: "Bespoke Rates",
       description: "Pristine beaches and colonial heritage meet in this ultimate island coastal escape.",
+      itinerary: "Day 1: Arrival & Sigiriya Sunset Climb\nDay 2: Morning Safari in Minneriya National Park\nDay 3: Dambulla Cave Temple visit & Departure",
     },
     {
       title: "Hiriketiya Beach",
