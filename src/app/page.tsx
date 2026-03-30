@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Search, Shield, UserCheck, Clock, CheckCircle, ChevronRight, ChevronLeft, MessageCircle, X, Plane, Map } from "lucide-react";
 import SimpleTourCard from "@/components/SimpleTourCard";
-
+import GoogleReviews from "@/components/GoogleReviews";
 
 export default function Home() {
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -425,6 +425,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <GoogleReviews />
 
       {/* 6. MUST-VISIT DESTINATIONS SECTION */}
       <section id="destinations" className="py-32 bg-white relative overflow-hidden">
