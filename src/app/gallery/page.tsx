@@ -6,12 +6,17 @@ export const metadata = {
 };
 
 const images = [
-    "https://res.cloudinary.com/dokkm4cxk/image/upload/v1772685945/ce13cbc49f658bc2003adc4d8efa6292_yjaeoy.jpg",
-    "https://images.unsplash.com/photo-1568254183919-78a4f43a2877?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    "https://images.unsplash.com/photo-1542361345-89e58247f2d1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    "https://images.unsplash.com/photo-1506012787146-f92b2d7d6d96?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    "https://res.cloudinary.com/dokkm4cxk/image/upload/v1775138787/WhatsApp_Image_2026-04-02_at_13.53.38_dg4hqe.jpg",
+    "https://res.cloudinary.com/dokkm4cxk/image/upload/v1775138784/WhatsApp_Image_2026-04-02_at_13.53.38_1_oa1x3m.jpg",
+    "https://res.cloudinary.com/dokkm4cxk/image/upload/v1775138779/WhatsApp_Image_2026-04-02_at_13.53.37_3_twbwsi.jpg",
+    "https://res.cloudinary.com/dokkm4cxk/image/upload/v1775138765/WhatsApp_Image_2026-04-02_at_13.50.43_1_vg1pvw.jpg",
+    "https://res.cloudinary.com/dokkm4cxk/image/upload/v1775138700/WhatsApp_Image_2026-04-02_at_13.50.05_r91jzx.jpg",
+    "https://res.cloudinary.com/dokkm4cxk/image/upload/v1775138743/WhatsApp_Image_2026-04-02_at_13.50.30_3_d0zlke.jpg",
+    "https://res.cloudinary.com/dokkm4cxk/image/upload/v1775138734/WhatsApp_Image_2026-04-02_at_13.50.28_q9humq.jpg",
+    "https://res.cloudinary.com/dokkm4cxk/image/upload/v1775138727/WhatsApp_Image_2026-04-02_at_13.50.19_aqvda5.jpg",
+    "https://res.cloudinary.com/dokkm4cxk/image/upload/v1775138717/WhatsApp_Image_2026-04-02_at_13.50.09_bopssc.jpg",
+    "https://res.cloudinary.com/dokkm4cxk/image/upload/v1775138710/WhatsApp_Image_2026-04-02_at_13.50.07_1_cck4vt.jpg",
+
 ];
 
 export default function Gallery() {

@@ -13,9 +13,10 @@ interface SimpleTourCardProps {
     price: string;
     description: string;
     itinerary?: string;
+    destinations?: string[];
 }
 
-const SimpleTourCard = ({ title, image, duration, price, description, itinerary }: SimpleTourCardProps) => {
+const SimpleTourCard = ({ title, image, duration, price, description, itinerary, destinations }: SimpleTourCardProps) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const whatsappNumber = "94728994660";
     const message = `Hi Pearl Paradise, I'm interested in the ${title} package.`;
@@ -42,7 +43,17 @@ const SimpleTourCard = ({ title, image, duration, price, description, itinerary 
                 <div className="p-4 flex flex-col flex-grow bg-white">
                     <span className="text-[9px] uppercase tracking-widest text-accent font-bold mb-1.5 block">{duration}</span>
                     <h3 className="text-lg font-serif text-black mb-2 leading-tight">{title}</h3>
-                    <p className="text-gray-400 text-[10px] leading-relaxed mb-4 line-clamp-2">{description}</p>
+                    <p className="text-gray-400 text-[10px] leading-relaxed mb-3 line-clamp-2">{description}</p>
+                    
+                    {destinations && destinations.length > 0 && (
+                        <div className="flex flex-wrap gap-1.5 mb-4">
+                            {destinations.map((dest, i) => (
+                                <span key={i} className="bg-gray-100/80 text-gray-500 text-[8px] uppercase font-bold tracking-widest px-2.5 py-1 rounded-full whitespace-nowrap">
+                                    {dest}
+                                </span>
+                            ))}
+                        </div>
+                    )}
 
                     <a
                         href={whatsappLink}

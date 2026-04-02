@@ -10,6 +10,7 @@ import GoogleReviews from "@/components/GoogleReviews";
 export default function Home() {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
+  const [maxIndex, setMaxIndex] = useState(5);
   const [selectedDestination, setSelectedDestination] = useState<any>(null);
   const [heroIndex, setHeroIndex] = useState(0);
 
@@ -51,6 +52,22 @@ export default function Home() {
     }
   };
 
+  useEffect(() => {
+    const updateMaxIndex = () => {
+      if (scrollRef.current) {
+        const { scrollWidth, clientWidth } = scrollRef.current;
+        const maxScrollLeft = scrollWidth - clientWidth;
+        const maxI = Math.max(0, Math.round(maxScrollLeft / scrollAmount));
+        setMaxIndex(maxI);
+      }
+    };
+
+    updateMaxIndex();
+    setTimeout(updateMaxIndex, 100);
+    window.addEventListener("resize", updateMaxIndex);
+    return () => window.removeEventListener("resize", updateMaxIndex);
+  }, []);
+
   // Auto-play effect for tours
   useEffect(() => {
     const timer = setInterval(() => {
@@ -79,34 +96,38 @@ export default function Home() {
 
   const featuredTours = [
     {
-      title: "Sigiriya Heritage & Wildlife",
+      title: "The Island Essentials",
       image: "https://res.cloudinary.com/dokkm4cxk/image/upload/v1772197267/eed44468521d2313270a60127226a9ba_mg38uy.jpg",
-      duration: "3 Days / 2 Nights",
+      duration: "7 Days / 6 Nights",
       price: "Inquire for Pricing",
       description: "Witness the ancient fortress and majestic wildlife in a curated private expedition.",
+      destinations: ["COLOMBO", "SIGIRIYA", "KANDY", "DAMBULLA"],
       itinerary: "Day 1: Arrival & Sigiriya Sunset Climb\nDay 2: Morning Safari in Minneriya National Park\nDay 3: Dambulla Cave Temple visit & Departure",
     },
     {
-      title: "Southern Coastal Luxury",
+      title: "The Grand Sri Lanka",
       image: "https://res.cloudinary.com/dokkm4cxk/image/upload/v1772196955/8829fd1a007d817dc1aad23eefad2145_qmw5yg.jpg",
-      duration: "5 Days / 4 Nights",
+      duration: "14 Days / 13 Nights",
       price: "Bespoke Rates",
-      description: "Pristine beaches and colonial heritage meet in this ultimate island coastal escape.",
+      description: "Ancient kingdoms, spice gardens, whale watching and pristine beaches — the complete island experience.",
+      destinations: ["ANURADHAPURA", "SIGIRIYA", "ELLA", "MIRISSA", "GALLE"],
       itinerary: "Day 1: Arrival & Sigiriya Sunset Climb\nDay 2: Morning Safari in Minneriya National Park\nDay 3: Dambulla Cave Temple visit & Departure",
     },
     {
-      title: "Hiriketiya Beach",
+      title: "The Ultimate Island",
       image: "https://res.cloudinary.com/dokkm4cxk/image/upload/v1772196297/1ff30e57088dbea3ad35c253352ae9fc_mmycsh.jpg",
-      duration: "2 Days / 1 Night",
+      duration: "16 Days / 15 Night",
       price: "Exclusive Experience",
       description: "Breathe the mist of tea plantations and emerald mountains in luxury.",
+      destinations: ["NEGOMBO", "KANDY", "N. ELIYA", "YALA", "BENTOTA"],
     },
     {
-      title: "Wild Yala Expedition",
+      title: "The Full Discovery",
       image: "https://res.cloudinary.com/dokkm4cxk/image/upload/v1772196297/51973ac996d22553bc157ddf10f59535_xnnhxs.jpg",
-      duration: "4 Days / 3 Nights",
+      duration: "10 Days / 9 Nights",
       price: "Adventure Rates",
       description: "Deep jungle safaris looking for the elusive leopard and vibrant wildlife.",
+      destinations: ["WILPATTU", "SIGIRIYA", "KANDY", "UDAWALAWE", "MIRISSA"],
     },
     {
       title: "Kandy Cultural Soul",
@@ -114,6 +135,7 @@ export default function Home() {
       duration: "3 Days / 2 Nights",
       price: "Standard Hire",
       description: "Explore the sacred temples and traditional ceremonies of our historic capital.",
+      destinations: ["KANDY", "PINNAWALA", "PERADENIYA"],
     },
     {
       title: "Galle Fort Whispers",
@@ -121,48 +143,7 @@ export default function Home() {
       duration: "2 Days / 1 Night",
       price: "Day Hire",
       description: "Walk the ramparts of history in the most preserved Dutch fort in Asia.",
-    },
-    {
-      title: "Nuwara Eliya Tea Trails",
-      image: "https://res.cloudinary.com/dokkm4cxk/image/upload/v1772197951/712df76d0a1b7710ee416b9dcb00eaa1_m69v7h.jpg",
-      duration: "3 Days / 2 Nights",
-      price: "Cool Escape",
-      description: "Stay in colonial bungalows amidst the rolling green valleys of Little England.",
-    },
-    {
-      title: "Bentota Golden Sands",
-      image: "https://res.cloudinary.com/dokkm4cxk/image/upload/v1772198118/12018aee436ddf14edda54ad28874753_o7sxpq.jpg",
-      duration: "2 Days / 1 Night",
-      price: "Beach Lovers",
-      description: "Jet-ski across rivers and relax on some of the world's most beautiful shores.",
-    },
-    {
-      title: "Trincomalee Marine Life",
-      image: "https://res.cloudinary.com/dokkm4cxk/image/upload/v1772198257/07f88ca84c2c59de8d127e2dbf67b86c_rcdrqq.jpg",
-      duration: "4 Days / 3 Nights",
-      price: "Marine Special",
-      description: "Whale watching and coral snorkeling in the crystal blue waters of the East.",
-    },
-    {
-      title: "Anuradhapura Holy City",
-      image: "https://res.cloudinary.com/dokkm4cxk/image/upload/v1772198325/ec08a70e909e36bc8a30c4f519bd6e40_ywi6vn.jpg",
-      duration: "3 Days / 2 Nights",
-      price: "Ancient Tour",
-      description: "A spiritual pilgrimage to the roots of our ancient Buddhist civilization.",
-    },
-    {
-      title: "Ella Ravana Falls",
-      image: "https://res.cloudinary.com/dokkm4cxk/image/upload/v1772198422/ac4832d35c00b2dde4697af41fb6260d_ilglvw.jpg",
-      duration: "3 Days / 2 Nights",
-      price: "Mist Escape",
-      description: "Hike the 9-arch bridge and witness the legendary falls of Ravana.",
-    },
-    {
-      title: "Polonnaruwa Chronicles",
-      image: "https://res.cloudinary.com/dokkm4cxk/image/upload/v1772198526/d82ca4a76a9775793c4d1fd4d24ff6e4_jcgbyo.jpg",
-      duration: "2 Days / 1 Night",
-      price: "History Rebuilt",
-      description: "Cycle through the ruins of a medieval kingdom and colossal stone statues.",
+      destinations: ["GALLE", "UNAWATUNA", "HIKKADUWA"],
     },
   ];
 
@@ -333,12 +314,12 @@ export default function Home() {
 
             {/* Symmetrical Interactive Shifting Indicators */}
             <div className="flex justify-center items-center gap-3 mt-4 mb-8">
-              {featuredTours.map((_, i) => (
+              {Array.from({ length: maxIndex + 1 }).map((_, i) => (
                 <button
                   key={i}
                   onClick={() => scrollTo(i)}
                   className={`h-1.5 rounded-full transition-all duration-500 hover:bg-accent/40 ${i === activeIndex ? "w-8 bg-accent" : "w-1.5 bg-gray-200"}`}
-                  aria-label={`Go to tour ${i + 1}`}
+                  aria-label={`Go to tour set ${i + 1}`}
                 />
               ))}
             </div>
@@ -387,27 +368,27 @@ export default function Home() {
           <div className="grid grid-cols-2 md:grid-cols-4 auto-rows-[250px] md:auto-rows-[300px] gap-4">
             {[
               {
-                url: "https://res.cloudinary.com/dokkm4cxk/image/upload/v1772685945/ce13cbc49f658bc2003adc4d8efa6292_yjaeoy.jpg",
+                url: "https://res.cloudinary.com/dokkm4cxk/image/upload/v1775138700/WhatsApp_Image_2026-04-02_at_13.50.05_r91jzx.jpg",
                 span: "md:col-span-2 md:row-span-2 col-span-2"
               },
               {
-                url: "https://res.cloudinary.com/dokkm4cxk/image/upload/v1772685942/cc851015cb976153445a39868fb40061_ymoric.jpg",
+                url: "https://res.cloudinary.com/dokkm4cxk/image/upload/v1775138787/WhatsApp_Image_2026-04-02_at_13.53.38_dg4hqe.jpg",
                 span: "col-span-1"
               },
               {
-                url: "https://res.cloudinary.com/dokkm4cxk/image/upload/v1772685942/961f92730632643995eaec6f37b7032f_zdbuyn.jpg",
+                url: "https://res.cloudinary.com/dokkm4cxk/image/upload/v1775138784/WhatsApp_Image_2026-04-02_at_13.53.38_1_oa1x3m.jpg",
                 span: "col-span-1"
               },
               {
-                url: "https://res.cloudinary.com/dokkm4cxk/image/upload/v1772198526/d82ca4a76a9775793c4d1fd4d24ff6e4_jcgbyo.jpg",
+                url: "https://res.cloudinary.com/dokkm4cxk/image/upload/v1775138779/WhatsApp_Image_2026-04-02_at_13.53.37_3_twbwsi.jpg",
                 span: "col-span-1 md:row-span-2"
               },
               {
-                url: "https://res.cloudinary.com/dokkm4cxk/image/upload/v1772685946/80621459aaf69ada85b0b2bf7e444eff_o50ifo.jpg",
+                url: "https://res.cloudinary.com/dokkm4cxk/image/upload/v1775138765/WhatsApp_Image_2026-04-02_at_13.50.43_1_vg1pvw.jpg",
                 span: "col-span-1"
               },
               {
-                url: "https://res.cloudinary.com/dokkm4cxk/image/upload/v1772685942/78505e368bfee005ed9a2c42c19bdada_bg2fia.jpg",
+                url: "https://res.cloudinary.com/dokkm4cxk/image/upload/v1775138757/WhatsApp_Image_2026-04-02_at_13.50.42_owxx8f.jpg",
                 span: "md:col-span-2 col-span-2"
               },
             ].map((img, i) => (
