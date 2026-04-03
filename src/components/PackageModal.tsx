@@ -105,18 +105,30 @@ const PackageModal: React.FC<PackageModalProps> = ({
                     </div>
 
                     {/* Fixed Booking Button Area */}
-                    <div className="p-6 md:px-10 md:py-8 border-t border-gray-100 bg-white/95 backdrop-blur-md space-y-4 shrink-0 shadow-[0_-15px_30px_-15px_rgba(0,0,0,0.05)] relative z-10 w-full">
-                        <a
-                            href={whatsappLink}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="flex items-center justify-center gap-3 w-full bg-black hover:bg-black/90 text-white font-bold py-4 rounded-2xl transition-all duration-300 transform active:scale-[0.98] group relative overflow-hidden shadow-lg shadow-black/10"
-                        >
-                            <span className="relative z-10 flex items-center gap-2 text-sm uppercase tracking-widest">
-                                <MessageCircle size={20} className="text-accent" />
-                                Booking or Customized Tour
-                            </span>
-                        </a>
+                    <div className="p-6 md:px-10 md:py-6 border-t border-gray-100 bg-white/95 backdrop-blur-md space-y-4 shrink-0 shadow-[0_-15px_30px_-15px_rgba(0,0,0,0.05)] relative z-10 w-full">
+                        <div className="flex flex-col sm:flex-row gap-3 w-full">
+                            <a
+                                href={whatsappLink}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex-1 flex items-center justify-center gap-2 bg-black hover:bg-black/90 text-white font-bold py-3 rounded-xl transition-all duration-300 transform active:scale-[0.98] shadow-lg shadow-black/10"
+                            >
+                                <span className="flex items-center gap-2 text-xs uppercase tracking-widest">
+                                    <MessageCircle size={16} className="text-accent" />
+                                    Book Now
+                                </span>
+                            </a>
+                            <a
+                                href={`https://wa.me/94728994660?text=${encodeURIComponent(`Hi Pearl Paradise, I would like to customize the ${title} package.`)}`}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex-1 flex items-center justify-center gap-2 bg-white hover:bg-gray-50 text-black font-bold py-3 rounded-xl border border-gray-200 transition-all duration-300 transform active:scale-[0.98] shadow-sm"
+                            >
+                                <span className="flex items-center gap-2 text-xs uppercase tracking-widest">
+                                    Customized Tour
+                                </span>
+                            </a>
+                        </div>
                         <p className="text-[10px] text-center text-gray-400 uppercase tracking-widest font-medium">Ready to start your journey? Contact us for custom arrangements.</p>
                     </div>
                 </div>
