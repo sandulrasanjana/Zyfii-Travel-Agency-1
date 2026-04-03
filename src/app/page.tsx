@@ -101,7 +101,7 @@ export default function Home() {
       duration: "7 Days / 6 Nights",
       price: "Inquire for Pricing",
       description: "Witness the ancient fortress and majestic wildlife in a curated private expedition.",
-      destinations: ["COLOMBO", "SIGIRIYA", "KANDY", "DAMBULLA"],
+      destinations: ["SIGIRIYA", "KANDY", "Nuwaraeliya", "Ella", "Hiriketiya"],
       itinerary: "Day 1: Arrival & Sigiriya Sunset Climb\nDay 2: Morning Safari in Minneriya National Park\nDay 3: Dambulla Cave Temple visit & Departure",
     },
     {
@@ -119,7 +119,7 @@ export default function Home() {
       duration: "16 Days / 15 Night",
       price: "Exclusive Experience",
       description: "Breathe the mist of tea plantations and emerald mountains in luxury.",
-      destinations: ["NEGOMBO", "KANDY", "N. ELIYA", "YALA", "BENTOTA"],
+      destinations: ["Trinkomali", "Sigiriya", "N. ELIYA", "YALA", "Mirissa"],
     },
     {
       title: "The Full Discovery",
@@ -127,7 +127,7 @@ export default function Home() {
       duration: "10 Days / 9 Nights",
       price: "Adventure Rates",
       description: "Deep jungle safaris looking for the elusive leopard and vibrant wildlife.",
-      destinations: ["WILPATTU", "SIGIRIYA", "KANDY", "UDAWALAWE", "MIRISSA"],
+      destinations: ["SIGIRIYA", "KANDY", "Yala", "UDAWALAWE", "Galle"],
     },
     {
       title: "Kandy Cultural Soul",
