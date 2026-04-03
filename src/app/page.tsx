@@ -6,6 +6,7 @@ import Link from "next/link";
 import { Search, Shield, UserCheck, Clock, CheckCircle, ChevronRight, ChevronLeft, MessageCircle, X, Plane, Map } from "lucide-react";
 import SimpleTourCard from "@/components/SimpleTourCard";
 import GoogleReviews from "@/components/GoogleReviews";
+import CurrencyCalculator from "@/components/CurrencyCalculator";
 
 export default function Home() {
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -15,11 +16,11 @@ export default function Home() {
   const [heroIndex, setHeroIndex] = useState(0);
 
   const heroImages = [
-    "https://images.unsplash.com/photo-1546708973-b339540b5162?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=90",
-    "https://res.cloudinary.com/dokkm4cxk/image/upload/v1772687026/adca85136d37ce2af6748fe0f9cbd9ad_pt6lrn.jpg",
-    "https://res.cloudinary.com/dokkm4cxk/image/upload/v1772687267/1811d4cf694ab9bdecdae4d8f0a84809_bmqldu.jpg",
-    "https://res.cloudinary.com/dokkm4cxk/image/upload/v1772687447/21b0bfe20e8cdc809a8e4e3f71f3cdcf_vm8ilh.jpg",
-    "https://res.cloudinary.com/dokkm4cxk/image/upload/v1772687629/fcdad1ed9f25dacf9b6e58e5fb2de7d3_xle1vb.jpg"
+    "https://res.cloudinary.com/dokkm4cxk/image/upload/v1775221314/amal-prasad-ztFkvmLKTcY-unsplash_ywj0mk.jpg",
+    "https://res.cloudinary.com/dokkm4cxk/image/upload/v1775221473/sb-bandara-1GJKxIkSR0E-unsplash_wzqai1.jpg",
+    "https://res.cloudinary.com/dokkm4cxk/image/upload/v1775220962/shashank-hudkar-KYBc1eq0dJo-unsplash_kpxgdp.jpg",
+    "https://res.cloudinary.com/dokkm4cxk/image/upload/v1775221122/bhuvanesh-gupta-QZo2wcFH9jI-unsplash_bo8p3y.jpg",
+    "https://res.cloudinary.com/dokkm4cxk/image/upload/v1775220903/hendrik-cornelissen-jpTT_SAU034-unsplash_miinct.jpg"
   ];
 
   const scrollAmount = 296; // Fixed: Card(256px) + Gap(40px)
@@ -611,6 +612,8 @@ export default function Home() {
           </div>
         </div>
       )}
+      {/* FLOATING CURRENCY CALCULATOR */}
+      <CurrencyCalculator />
     </div>
   );
 }
