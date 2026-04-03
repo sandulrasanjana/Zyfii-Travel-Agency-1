@@ -102,7 +102,13 @@ export default function Home() {
       price: "Inquire for Pricing",
       description: "Witness the ancient fortress and majestic wildlife in a curated private expedition.",
       destinations: ["SIGIRIYA", "KANDY", "Nuwaraeliya", "Ella", "Hiriketiya"],
-      itinerary: "Day 1: Arrival & Sigiriya Sunset Climb\nDay 2: Morning Safari in Minneriya National Park\nDay 3: Dambulla Cave Temple visit & Departure",
+      itinerary: [
+        { day: "ARRIVAL", title: "Airport / Negombo", description: "Private pickup & welcome transfer" },
+        { day: "DAY 1 - 2", title: "Sigiriya", description: "Minneriya Safari • Herbal Massage • Village Tour • Sigiriya or Pidurangala Rock" },
+        { day: "DAY 3", title: "Kandy", description: "Dambulla Cave Temple • Spice Garden • Temple of the Tooth • Cultural Show" },
+        { day: "DAY 4 - 5", title: "Nuwara Eliya / Ella", description: "Tea Factory Tour • Ramboda Falls • Train Journey to Ella • Nine Arches Bridge" },
+        { day: "DEPARTURE", title: "Colombo / Airport", description: "Colombo City Tour • Transfer to Airport" }
+      ],
     },
     {
       title: "The Grand Sri Lanka",
@@ -111,7 +117,14 @@ export default function Home() {
       price: "Bespoke Rates",
       description: "Ancient kingdoms, spice gardens, whale watching and pristine beaches — the complete island experience.",
       destinations: ["ANURADHAPURA", "SIGIRIYA", "ELLA", "MIRISSA", "GALLE"],
-      itinerary: "Day 1: Arrival & Sigiriya Sunset Climb\nDay 2: Morning Safari in Minneriya National Park\nDay 3: Dambulla Cave Temple visit & Departure",
+      itinerary: [
+        { day: "ARRIVAL", title: "Airport / Negombo", description: "Private pickup & welcome transfer to relax before the grand journey" },
+        { day: "DAY 1 - 3", title: "Anuradhapura & Sigiriya", description: "Ancient City Tour • Mihintale • Minneriya Safari • Pidurangala Rock" },
+        { day: "DAY 4 - 6", title: "Kandy & Nuwara Eliya", description: "Temple of the Tooth • Royal Botanical Gardens • Tea Experiences • Waterfalls" },
+        { day: "DAY 7 - 9", title: "Ella & Yala", description: "Scenic Train Ride • Little Adam's Peak • Yala National Park Safari" },
+        { day: "DAY 10 - 13", title: "South Coast & Galle", description: "Whale Watching in Mirissa • Pristine Beaches • Galle Dutch Fort Tour" },
+        { day: "DEPARTURE", title: "Airport Transfer", description: "Final souvenirs shopping and drop-off" }
+      ],
     },
     {
       title: "The Ultimate Island",
@@ -120,6 +133,15 @@ export default function Home() {
       price: "Exclusive Experience",
       description: "Breathe the mist of tea plantations and emerald mountains in luxury.",
       destinations: ["Trinkomali", "Sigiriya", "N. ELIYA", "YALA", "Mirissa"],
+      itinerary: [
+        { day: "ARRIVAL", title: "Airport / Negombo", description: "Private pickup & welcome transfer to beach resort" },
+        { day: "DAY 1 - 3", title: "Trincomalee", description: "Pigeon Island Snorkeling • pristine beaches of the East Coast • Koneswaram Temple" },
+        { day: "DAY 4 - 6", title: "Sigiriya & Dambulla", description: "Lion Rock Fortress • Minneriya Elephant Safari • Spice Gardens" },
+        { day: "DAY 7 - 9", title: "Kandy & Nuwara Eliya", description: "Temple of the Tooth • Scenic Train Ride • Ramboda Waterfalls • Tea Plantations" },
+        { day: "DAY 10 - 12", title: "Yala & South Coast", description: "Yala National Park Safari • Tangalle beaches • Blowhole" },
+        { day: "DAY 13 - 15", title: "Mirissa & Galle", description: "Whale Watching • Coconut Tree Hill • Galle Fort Walking Tour" },
+        { day: "DEPARTURE", title: "Airport Transfer", description: "Souvenir shopping in Colombo • Drop-off at Airport" }
+      ],
     },
     {
       title: "The Full Discovery",
@@ -128,6 +150,14 @@ export default function Home() {
       price: "Adventure Rates",
       description: "Deep jungle safaris looking for the elusive leopard and vibrant wildlife.",
       destinations: ["SIGIRIYA", "KANDY", "Yala", "UDAWALAWE", "Galle"],
+      itinerary: [
+        { day: "ARRIVAL", title: "Airport / Negombo", description: "Private pickup & unwind by the sea" },
+        { day: "DAY 1 - 2", title: "Sigiriya", description: "Climb the ancient fortress • Pidurangala sunset • Village experience" },
+        { day: "DAY 3 - 4", title: "Kandy", description: "Temple of the Sacred Tooth • Royal Botanical Gardens • Cultural dance show" },
+        { day: "DAY 5 - 6", title: "Yala via Ella", description: "Scenic drive through tea country • Yala National Park Leopard Safari" },
+        { day: "DAY 7 - 8", title: "Udawalawe & Galle", description: "Udawalawe Elephant Transit Home • Galle Dutch Fort" },
+        { day: "DEPARTURE", title: "Airport Transfer", description: "Coastal drive to the Airport for departure" }
+      ],
     },
     {
       title: "Kandy Cultural Soul",
@@ -136,6 +166,11 @@ export default function Home() {
       price: "Standard Hire",
       description: "Explore the sacred temples and traditional ceremonies of our historic capital.",
       destinations: ["KANDY", "PINNAWALA", "PERADENIYA"],
+      itinerary: [
+        { day: "DAY 1", title: "Colombo to Kandy", description: "Pinnawala Elephant Orphanage • Spice Gardens visit" },
+        { day: "DAY 2", title: "Kandy City Tour", description: "Temple of the Tooth Relic • Upper Lake Drive • Cultural Dance Performance" },
+        { day: "DAY 3", title: "Peradeniya & Departure", description: "Royal Botanical Gardens tour • Souvenir shopping • Return to Colombo" }
+      ],
     },
     {
       title: "Galle Fort Whispers",
@@ -144,6 +179,10 @@ export default function Home() {
       price: "Day Hire",
       description: "Walk the ramparts of history in the most preserved Dutch fort in Asia.",
       destinations: ["GALLE", "UNAWATUNA", "HIKKADUWA"],
+      itinerary: [
+        { day: "DAY 1", title: "Galle City Tour", description: "Explore the UNESCO Dutch Fort • Lighthouse • Maritime Museum • Sunset at the ramparts" },
+        { day: "DAY 2", title: "Unawatuna & Hikkaduwa", description: "Relax at Unawatuna Beach • Turtle Hatchery • Return to Colombo" }
+      ],
     },
   ];
 
@@ -257,13 +296,6 @@ export default function Home() {
                     <p className="text-gray-400 text-[10px] leading-relaxed uppercase tracking-tighter opacity-80">{item.detail}</p>
                   </div>
                 ))}
-              </div>
-
-              <div className="pt-8">
-                <Link href="/about" className="inline-flex items-center gap-6 text-black font-bold uppercase tracking-[0.2em] text-[10px] group transition-all duration-300 hover:text-accent">
-                  EXPLORE OUR STORY
-                  <span className="w-12 h-px bg-black group-hover:bg-accent group-hover:w-20 transition-all duration-500"></span>
-                </Link>
               </div>
             </div>
           </div>
@@ -412,7 +444,7 @@ export default function Home() {
       <GoogleReviews />
 
       {/* 6. MUST-VISIT DESTINATIONS SECTION */}
-      <section id="destinations" className="py-32 bg-white relative overflow-hidden">
+      <section id="destinations" className="py-32 bg-gray-50 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 lg:px-12 w-full relative z-10">
           <div className="mb-20 text-center">
             <span className="luxury-text text-gray-400 text-sm block mb-4 tracking-[0.3em] reveal">Inspiration</span>

@@ -13,6 +13,11 @@ const packages = [
         duration: "1 Day",
         price: "$150",
         description: "Discover the city's most iconic landmarks in style. Includes stops at major attractions and lunch.",
+        itinerary: [
+            { day: "MORNING", title: "City Tour", description: "Pickup from hotel • Visit Independence Square and Gangaramaya Temple" },
+            { day: "AFTERNOON", title: "Culture & Shopping", description: "Local lunch • Dutch Hospital Shopping Precinct • Galle Face Green" },
+            { day: "EVENING", title: "Drop-off", description: "Transfer back to your hotel or airport" }
+        ],
     },
     {
         title: "Safari Expedition",
@@ -20,6 +25,11 @@ const packages = [
         duration: "3 Days / 2 Nights",
         price: "$600",
         description: "An unforgettable adventure into the wild. Spot exotic wildlife from the comfort of our rugged vans.",
+        itinerary: [
+            { day: "DAY 1", title: "Journey to the Wild", description: "Pickup and transfer to National Park • Evening introductory safari" },
+            { day: "DAY 2", title: "Full Day Safari", description: "Morning and afternoon game drives • Leopard and elephant tracking • Camping under the stars" },
+            { day: "DAY 3", title: "Departure", description: "Final morning drive • Transfer back to your desired location" }
+        ],
     },
     {
         title: "Island Hopping",
@@ -27,6 +37,11 @@ const packages = [
         duration: "4 Days / 3 Nights",
         price: "$800",
         description: "Explore the beautiful islands with our coordinated ferry and van transfer services.",
+        itinerary: [
+            { day: "DAY 1", title: "Coastal Transfer", description: "Drive to the eastern or northern harbor • Evening beach relaxation" },
+            { day: "DAY 2-3", title: "Island Adventures", description: "Ferry rides to surrounding islands • Snorkeling • Coral reefs • Beach BBQ" },
+            { day: "DAY 4", title: "Return Journey", description: "Morning swim • Coordinated transfer back to the mainland and drop-off" }
+        ],
     },
     {
         title: "Cultural Heritage Tour",
@@ -34,6 +49,10 @@ const packages = [
         duration: "2 Days",
         price: "$350",
         description: "Immerse yourself in local traditions, visit ancient temples, and enjoy authentic cuisine.",
+        itinerary: [
+            { day: "DAY 1", title: "Ancient Kingdoms", description: "Explore Polonnaruwa ruins and Anuradhapura sacred city • Traditional local lunch" },
+            { day: "DAY 2", title: "Rock Fortresses", description: "Morning climb at Sigiriya • Dambulla Cave Temples • Transfer back" }
+        ],
     },
     {
         title: "Luxury Beach Escape",
@@ -41,6 +60,11 @@ const packages = [
         duration: "Flexible",
         price: "From $200/day",
         description: "Relax on pristine beaches. Our driver handles the logistics while you soak up the sun.",
+        itinerary: [
+            { day: "ARRIVAL", title: "Coastal Transfer", description: "Seamless premium vehicle transfer to your luxury beach resort" },
+            { day: "FLEXIBLE", title: "Sun & Sea", description: "Your assigned driver is on standby for any local trips, dining out, or water sports" },
+            { day: "DEPARTURE", title: "Airport Drop-off", description: "Relaxing drive back to the airport when your holiday completes" }
+        ],
     },
     {
         title: "Custom Road Trip",
@@ -48,6 +72,9 @@ const packages = [
         duration: "Custom",
         price: "Quote",
         description: "Plan your own itinerary. We provide the vehicle and driver to take you wherever you want to go.",
+        itinerary: [
+            { day: "DAY 1 ONWARDS", title: "Your Dream Journey", description: "You set the pace and destination. Our experienced chauffeur-guide will take you anywhere in comfort and style." }
+        ],
     },
 ];
 

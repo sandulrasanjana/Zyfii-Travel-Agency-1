@@ -13,7 +13,7 @@ interface TourCardProps {
     duration: string;
     price: string;
     description: string;
-    itinerary?: string;
+    itinerary?: string | any[];
 }
 
 const TourCard = ({ title, image, duration, price, description, itinerary }: TourCardProps) => {

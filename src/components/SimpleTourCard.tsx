@@ -12,7 +12,7 @@ interface SimpleTourCardProps {
     duration: string;
     price: string;
     description: string;
-    itinerary?: string;
+    itinerary?: string | any[];
     destinations?: string[];
 }
 

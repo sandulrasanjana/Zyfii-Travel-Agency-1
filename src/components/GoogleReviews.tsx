@@ -4,8 +4,8 @@ import { useRef, useState, useEffect } from "react";
 import Image from "next/image";
 import { Star, ChevronLeft, ChevronRight } from "lucide-react";
 
-const GoogleIcon = () => (
-  <svg viewBox="0 0 24 24" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+const GoogleIcon = ({ className = "w-4 h-4 grayscale opacity-40 shrink-0" }: { className?: string }) => (
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" className={className}>
     <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4" />
     <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853" />
     <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05" />
@@ -102,7 +102,7 @@ export default function GoogleReviews() {
   }, []);
 
   return (
-    <section id="reviews" className="py-32 bg-white relative overflow-hidden">
+    <section id="reviews" className="pt-32 pb-12 bg-white relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 lg:px-12 w-full relative z-10">
 
         {/* Header Section */}
@@ -201,24 +201,7 @@ export default function GoogleReviews() {
           </div>
         </div>
 
-        {/* Rating Card Bottom */}
-        <div className="mt-16 flex justify-center reveal" style={{ transitionDelay: '400ms' }}>
-          <div className="inline-flex items-center gap-4 bg-gray-50 px-8 py-4 rounded-2xl border border-gray-100 shadow-sm transition-transform hover:-translate-y-1 duration-300">
-            <div className="text-center">
-              <span className="text-2xl font-bold block leading-none mb-1">5.0</span>
-              <div className="flex">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} size={14} fill="#FBBC05" className="text-[#FBBC05]" />
-                ))}
-              </div>
-            </div>
-            <div className="w-px h-10 bg-gray-200"></div>
-            <div className="text-left flex flex-col justify-center gap-1">
-              <GoogleIcon />
-              <span className="text-[10px] font-bold uppercase tracking-widest text-gray-400">Google Reviews</span>
-            </div>
-          </div>
-        </div>
+
 
       </div>
     </section>
